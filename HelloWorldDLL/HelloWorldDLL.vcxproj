@@ -147,7 +147,7 @@
       <AdditionalUsingDirectories>C:\Users\Nico\GitHub\Genshin-Bypass\x64\Release;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
       <CompileAsManaged>false</CompileAsManaged>
       <AdditionalOptions>/Zc:twoPhase- %(AdditionalOptions)</AdditionalOptions>
-      <ShowIncludes>true</ShowIncludes>
+      <ShowIncludes>false</ShowIncludes>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="vk_code.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
