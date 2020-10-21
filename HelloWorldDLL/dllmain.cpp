@@ -66,7 +66,6 @@ unsigned long main_thread(void*)
 	unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
 	unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
 	userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
-	printf("\nHello inside of Genshin Impact.\n\n");
 	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
 	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
 	printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
@@ -248,12 +247,18 @@ void FreezeTeleport() {
 }
 void PrintMenu() {
 	clearConsole();
-	printf("#######################################\n"
+	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
+	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
+	printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
+	printf("\n"
+		"#######################################\n"
 		"#  Hotkey  #          Function        #\n"
 		"#----------#--------------------------#\n"
 		"#    F4    # Save current Coordinates #\n"
 		"#    F5    # Teleport to saved Coords #\n"
 		"#    F6    # Toggle FPS (30|200)      #\n"
+		"#    F7    # Toggle ESP               #\n"
+		"#    F8    # Toggle InstantBowCharge  #\n"
 		"#    F9    #       Exit programm      #\n"
 		"#######################################\n"
 		"\n"
