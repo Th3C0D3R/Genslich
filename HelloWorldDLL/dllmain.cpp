@@ -134,9 +134,11 @@ unsigned long main_thread(void*)
 void WriteMemory(UINT_PTR address, int value, int length) {
 	MEMORY_BASIC_INFORMATION mbi;
 	VirtualQuery((void*)address, &mbi, sizeof(mbi));
-	VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_READWRITE, &mbi.Protect);
-	memset((void*)address, value, length);
-	VirtualProtect(mbi.BaseAddress, mbi.RegionSize, mbi.Protect, &mbi.Protect);
+	if (VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_READWRITE, &mbi.Protect))
+	{
+		memset((void*)address, value, length);
+		VirtualProtect(mbi.BaseAddress, mbi.RegionSize, mbi.Protect, &mbi.Protect);
+	}
 	return;
 }
 void ESPHack() {
@@ -157,20 +159,20 @@ void ESPHack() {
 	//}
 }
 void MonsterLevel() {
-	WriteMemory(userAssemblyBaseAddress + 0x125AD3E, ESP ? 0x84 : 0x87, 1); //0x87
-	printf("MonsterLevel\n");
+	WriteMemory(userAssemblyBaseAddress + 0x125AD3E, ESP ? 0x84 : 0x87, 1); //0x8
+	printf("MonsterLevel Address: 0x%llx\n", userAssemblyBaseAddress + 0x125AD3E);
 }
 void MonsterHP() {
-	WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
-	printf("MonsterHP\n");
+	//WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
+	printf("MonsterHP Address: 0x%llx\n", userAssemblyBaseAddress + 0x12597BB);
 }
 void ChestESP() {
-	WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
-	printf("ChestESP\n");
+	//WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
+	printf("ChestESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F317);
 }
 void ChestESPDist() {
-	WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
-	printf("ChestDistESP\n");
+	//WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
+	printf("ChestDistESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F39A);
 }
 void InstantBowCharge() {
 	IBC = !IBC;
