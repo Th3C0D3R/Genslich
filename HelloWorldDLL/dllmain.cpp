@@ -12,7 +12,6 @@
 #include <sstream>
 #include <vector>
 #include <Windows.h>
-#include <mutex>
 #include <thread>
 #include "vk_code.h"
 
@@ -32,11 +31,10 @@ UINT_PTR userAssemblyBaseAddress = 0;
 float SavedCoords[3] = { 0,0,0 };
 float OldCoords[3] = { 0,0,0 };
 bool FPS = false, ESP = false, IBC = false;
-std::string lastLines[5] = { "","","","","" };
-std::mutex lineChanges, mlastLines;
+const char *lastLines[5];
 
 void clearConsole();
-void addInfoLine(std::string newLine);
+void addInfoLine(char* newLine);
 void SaveCurrentCoords();
 void TELE();
 void ToggleFPS();
@@ -53,78 +51,90 @@ void WriteMemory(UINT_PTR address, int value, int length);
 
 unsigned long main_thread(void*)
 {
-	if (!AllocConsole())
-	{
-		return 1;
-	}
-
-	freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
-	freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-	SetConsoleTitle(TEXT("SiedlerLP | "));
-	HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
-	HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
-	unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
-	unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
-	userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
-	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
-	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
-	printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
-	bool Continue = true;
-	bool block = false;
-
-	RegisterHotKey(NULL, HOTKEY_F4, MOD_NOREPEAT, VK_F4);
-	RegisterHotKey(NULL, HOTKEY_F5, MOD_NOREPEAT, VK_F5);
-	RegisterHotKey(NULL, HOTKEY_F6, MOD_NOREPEAT, VK_F6);
-	RegisterHotKey(NULL, HOTKEY_F7, MOD_NOREPEAT, VK_F7);
-	RegisterHotKey(NULL, HOTKEY_F8, MOD_NOREPEAT, VK_F8);
-	RegisterHotKey(NULL, HOTKEY_F9, MOD_NOREPEAT, VK_F9);
-
-	MSG msg = { 0 };
-	std::thread tMenu(PrintMenu);
-	tMenu.join();
-	while (GetMessage(&msg, NULL, 0, 0) != 0)
-	{
-		if (msg.message == WM_HOTKEY)
+	try {
+		if (!AllocConsole())
 		{
-			switch (msg.wParam)
+			return 1;
+		}
+
+		freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
+		freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
+		SetConsoleTitle(TEXT("SiedlerLP | "));
+		HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
+		HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
+		unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
+		unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
+		userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
+		printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
+		printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
+		printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
+		bool Continue = true;
+		bool block = false;
+
+		RegisterHotKey(NULL, HOTKEY_F4, MOD_NOREPEAT, VK_F4);
+		RegisterHotKey(NULL, HOTKEY_F5, MOD_NOREPEAT, VK_F5);
+		RegisterHotKey(NULL, HOTKEY_F6, MOD_NOREPEAT, VK_F6);
+		RegisterHotKey(NULL, HOTKEY_F7, MOD_NOREPEAT, VK_F7);
+		RegisterHotKey(NULL, HOTKEY_F8, MOD_NOREPEAT, VK_F8);
+		RegisterHotKey(NULL, HOTKEY_F9, MOD_NOREPEAT, VK_F9);
+
+		MSG msg = { 0 };
+		//std::thread tMenu(PrintMenu);
+		//tMenu.join();
+		while (GetMessage(&msg, NULL, 0, 0) != 0)
+		{
+			if (msg.message == WM_HOTKEY)
 			{
-			case HOTKEY_F4:
-				SaveCurrentCoords();
-				break;
-			case HOTKEY_F5: {
-				if (SavedCoords[0] == 0 || SavedCoords[1] == 0 || SavedCoords[2] == 2) printf("[+] No teleport-coordiantes saved\n");
-				std::thread t1(FreezeTeleport);
-				std::thread tMove(WalkForTeleport);
-				t1.join();
-				tMove.join();
-				break;
-			}
-			case HOTKEY_F6:
-				ToggleFPS();
-				break;
-			case HOTKEY_F7:
-				ESPHack();
-				break;
-			case HOTKEY_F8:
-				InstantBowCharge();
-				break;
-			case HOTKEY_F9:
-				FreeConsole();
-				return 0;
-				break;
-			default:
-				break;
+				switch (msg.wParam)
+				{
+				case HOTKEY_F4:
+					SaveCurrentCoords();
+					break;
+				case HOTKEY_F5: {
+					if (SavedCoords[0] == 0 || SavedCoords[1] == 0 || SavedCoords[2] == 2) printf("[+] No teleport-coordiantes saved\n");
+					std::thread t1(FreezeTeleport);
+					std::thread tMove(WalkForTeleport);
+					t1.join();
+					tMove.join();
+					break;
+				}
+				case HOTKEY_F6:
+					ToggleFPS();
+					break;
+				case HOTKEY_F7:
+					ESPHack();
+					break;
+				case HOTKEY_F8:
+					//InstantBowCharge();
+					break;
+				case HOTKEY_F9:
+					FreeConsole();
+					return 0;
+					break;
+				default:
+					break;
+				}
 			}
 		}
+		FreeConsole();
+		return 0;
 	}
-	FreeConsole();
-	return 0;
+	catch (...)
+	{
+		wchar_t buf[256];
+		FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+			NULL, GetLastError(), MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+			buf, (sizeof(buf) / sizeof(wchar_t)), NULL);
+		MessageBox(NULL, "ERROR", (char*)buf, MB_OK);
+		FreeConsole();
+		return 0;
+	}
 }
 
 void WriteMemory(UINT_PTR address, int value, int length) {
 	MEMORY_BASIC_INFORMATION mbi;
 	VirtualQuery((void*)address, &mbi, sizeof(mbi));
-	VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_EXECUTE_READWRITE, &mbi.Protect);
+	VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_READWRITE, &mbi.Protect);
 	memset((void*)address, value, length);
 	VirtualProtect(mbi.BaseAddress, mbi.RegionSize, mbi.Protect, &mbi.Protect);
 	return;
@@ -135,43 +145,53 @@ void ESPHack() {
 	MonsterLevel();
 	ChestESP();
 	ChestESPDist();
-
-	std::ostringstream line;
-	line << "ESP (Monster & Chest): " << ESP ? "activated" : "disabled";
-	{
-		std::lock_guard<std::mutex> lockGuard(lineChanges);
-		addInfoLine(line.str());
-	}
+	char line[UCHAR_MAX] = "";
+	snprintf(line, sizeof line, "[+] ESP (Monster & Chest): %s\n", (ESP ? "enabled" : "disabled"));
+	printf(line);
+	//char line[50];
+	//strcpy_s(line, "ESP (Monster & Chest): ");
+	//strcat_s(line, (ESP ? "activated" : "disabled"));
+	//{
+	//	//std::lock_guard<std::mutex> lockGuard(lineChanges);
+	//	addInfoLine(line);
+	//}
 }
 void MonsterLevel() {
-
-	WriteMemory(userAssemblyBaseAddress + 0x125A79E, ESP ? 0x84 : 0x87, 1); //0x87
+	WriteMemory(userAssemblyBaseAddress + 0x125AD3E, ESP ? 0x84 : 0x87, 1); //0x87
+	printf("MonsterLevel\n");
 }
 void MonsterHP() {
-	WriteMemory(userAssemblyBaseAddress + 0x125921B, ESP ? 0x74 : 0x76, 1); //0x76
+	WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
+	printf("MonsterHP\n");
 }
 void ChestESP() {
-	WriteMemory(userAssemblyBaseAddress + 0x1C6ED77, ESP ? 0x75 : 0x74, 1); //0x74
+	WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
+	printf("ChestESP\n");
 }
 void ChestESPDist() {
-	WriteMemory(userAssemblyBaseAddress + 0x1C6EDFA, ESP ? 0x75 : 0x74, 1); //0x74
+	WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
+	printf("ChestDistESP\n");
 }
 void InstantBowCharge() {
 	IBC = !IBC;
 	if (IBC)
-		WriteMemory(userAssemblyBaseAddress + 0x348E32F, 0x90, 4); //0F 11 47 10
+		WriteMemory(userAssemblyBaseAddress + 0x346DCCF, 0x90, 4); //0F 11 47 10
 	else {
-		WriteMemory(userAssemblyBaseAddress + 0x348E32F, 0x0F, 1);
-		WriteMemory(userAssemblyBaseAddress + 0x348E330, 0x11, 1);
-		WriteMemory(userAssemblyBaseAddress + 0x348E331, 0x47, 1);
-		WriteMemory(userAssemblyBaseAddress + 0x348E332, 0x10, 1);
+		WriteMemory(userAssemblyBaseAddress + 0x346DCCF, 0x0F, 1);
+		WriteMemory(userAssemblyBaseAddress + 0x346DCD0, 0x11, 1);
+		WriteMemory(userAssemblyBaseAddress + 0x346DCD1, 0x47, 1);
+		WriteMemory(userAssemblyBaseAddress + 0x346DCD2, 0x10, 1);
 	}
-	std::ostringstream line;
-	line << "InstantBowCharge: " << IBC ? "activated" : "disabled";
-	{
-		std::lock_guard<std::mutex> lockGuard(lineChanges);
-		addInfoLine(line.str());
-	}
+	char line[UCHAR_MAX] = "";
+	snprintf(line, sizeof line, "[+] InstantBowCharge: %s\n", (IBC ? "enabled" : "disabled"));
+	printf(line);
+	//char line[50];
+	//strcpy_s(line, "InstantBowCharge: ");
+	//strcat_s(line, (IBC ? "activated" : "disabled"));
+	//{
+	//	//std::lock_guard<std::mutex> lockGuard(lineChanges);
+	//	addInfoLine(line);
+	//}
 }
 void clearConsole() {
 	if (system("CLS")) system("clear");
@@ -181,17 +201,27 @@ void SaveCurrentCoords() {
 	float X = (*(float*)((*(UINT_PTR*)((*(UINT_PTR*)(unityPlayerOffsetAddress + 0x88)) + 0x8)) + 0xA8));
 	float Z = (*(float*)((*(UINT_PTR*)((*(UINT_PTR*)(unityPlayerOffsetAddress + 0x88)) + 0x8)) + 0xA4));
 	float Y = (*(float*)((*(UINT_PTR*)((*(UINT_PTR*)(unityPlayerOffsetAddress + 0x88)) + 0x8)) + 0xA0));
-	printf("[+] [SAVED] X: %f\n    Y: %f\n    Z: %f\n", X, Y, Z);
+	char line[UCHAR_MAX] = "";
+	snprintf(line, sizeof line, "[+] [SAVED] X: %f\n    Y: %f\n    Z: %f\n", X, Y, Z);
+	printf(line);
 	SavedCoords[0] = X;
 	SavedCoords[1] = Z;
 	SavedCoords[2] = Y;
-
-	std::ostringstream line;
-	line << "Saved Coords " << SavedCoords[0] << " | " << SavedCoords[2] << " | " << SavedCoords[1];
-	{
-		std::lock_guard<std::mutex> lockGuard(lineChanges);
-		addInfoLine(line.str());
-	}
+	//char line[120];
+	//char Coord[sizeof SavedCoords[0]];
+	//strcpy_s(line, "Saved Coords: ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[0]), SavedCoords[0], 8);
+	//strcat_s(line, Coord);
+	//strcat_s(line, " | ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[2]), SavedCoords[2], 8);
+	//strcat_s(line, Coord);
+	//strcat_s(line, " | ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[1]), SavedCoords[1], 8);
+	//strcat_s(line, Coord);
+	//{
+	//	//std::lock_guard<std::mutex> lockGuard(lineChanges);
+	//	addInfoLine(line);
+	//}
 }
 void TELE() {
 	if (unityPlayerOffsetAddress == 0) return;
@@ -206,12 +236,24 @@ void TELE() {
 		Sleep(1);
 		counter += 0.02;
 	}
-	std::ostringstream line;
-	line << "Teleporting to " << SavedCoords[0] << " | " << SavedCoords[2] << " | " << SavedCoords[1];
-	{
-		std::lock_guard<std::mutex> lockGuard(lineChanges);
-		addInfoLine(line.str());
-	}
+	char line[UCHAR_MAX] = "";
+	snprintf(line, sizeof line, "[+] Teleport to: %f | %f | %f\n", SavedCoords[0], SavedCoords[2], SavedCoords[1]);
+	printf(line);
+	//char line[120];
+	//char Coord[sizeof SavedCoords[0]];
+	//strcpy_s(line, "Teleporting to: ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[0]), SavedCoords[0], 8);
+	//strcat_s(line, Coord);
+	//strcat_s(line, " | ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[2]), SavedCoords[2], 8);
+	//strcat_s(line, Coord);
+	//strcat_s(line, " | ");
+	//_gcvt_s(Coord, sizeof(SavedCoords[1]), SavedCoords[1], 8);
+	//strcat_s(line, Coord);
+	//{
+	//	//std::lock_guard<std::mutex> lockGuard(lineChanges);
+	//	addInfoLine(line);
+	//}
 }
 void ToggleFPS() {
 	FPS = !FPS;
@@ -220,27 +262,22 @@ void ToggleFPS() {
 	else
 		*(int*)(unityPlayerBaseAddress + 0x18269C4) = 30;
 
+	char line[UCHAR_MAX] = "";
+	snprintf(line, sizeof line, "[+] FPS toggled: %i\n", *(int*)(unityPlayerBaseAddress + 0x18269C4));
+	printf(line);
 
-	std::ostringstream line;
-	line << "FPS toggled: " << *(int*)(unityPlayerBaseAddress + 0x18269C4);
-	{
-		std::lock_guard<std::mutex> lockGuard(lineChanges);
-		addInfoLine(line.str());
-	}
+	//char line[50];
+	//strcpy_s(line, sizeof line, "FPS toggled: ");
+	//strcat_s(line, sizeof line, (char*)*(int*)(unityPlayerBaseAddress + 0x18269C4));
+	//{
+	//	//std::lock_guard<std::mutex> lockGuard(lineChanges);
+	//	addInfoLine(line);
+	//}
 }
 void WalkForTeleport() {
 	keybd_event(VK_SPACE, 0x9e, 0, 0);
 	Sleep(250);
 	keybd_event(VK_SPACE, 0x9e, KEYEVENTF_KEYUP, 0);
-	/*keybd_event(VkKeyScan('A'), 0x9e, 0, 0);
-	Sleep(500);
-	keybd_event(VkKeyScan('A'), 0x9e, KEYEVENTF_KEYUP, 0);
-	keybd_event(VkKeyScan('S'), 0x9e, 0, 0);
-	Sleep(500);
-	keybd_event(VkKeyScan('S'), 0x9e, KEYEVENTF_KEYUP, 0);
-	keybd_event(VkKeyScan('D'), 0x9e, 0, 0);
-	Sleep(500);
-	keybd_event(VkKeyScan('D'), 0x9e, KEYEVENTF_KEYUP, 0);*/
 }
 void FreezeTeleport() {
 	TELE();
@@ -261,37 +298,43 @@ void PrintMenu() {
 		"#    F8    # Toggle InstantBowCharge  #\n"
 		"#    F9    #       Exit programm      #\n"
 		"#######################################\n"
-		"\n"
-		"\n"
-		"\n"
-		"Last actions:\n");
+		"\n");/*
 	for (int i = 4; i >= 0; i--)
 	{
-		printf(lastLines[i].c_str());
+		printf(lastLines[i]);
 		printf("\n");
-	}
+	}*/
 	Sleep(200);
 }
-void addInfoLine(std::string newLine) {
-	std::lock_guard<std::mutex> lockGuard(mlastLines);
+void addInfoLine(char* newLine) {
+	//std::lock_guard<std::mutex> lockGuard(mlastLines);
 	for (int i = 0; i < sizeof lastLines; i++)
 	{
 		if (i == (sizeof lastLines) - 1) lastLines[i] = newLine;
-		else lastLines[i] = lastLines[i+1];
+		else lastLines[i] = lastLines[i + 1];
 	}
 }
 
 BOOL APIENTRY DllMain(HMODULE module_handle, DWORD call_reason, LPVOID reserved)
 {
-	if (call_reason == DLL_PROCESS_ATTACH)
+	try
 	{
-		if (const auto handle = CreateThread(nullptr, 0, &main_thread, nullptr, 0, nullptr); handle != nullptr)
+		if (call_reason == DLL_PROCESS_ATTACH)
 		{
-			CloseHandle(handle);
+			if (const auto handle = CreateThread(nullptr, 0, &main_thread, nullptr, 0, nullptr); handle != nullptr)
+			{
+				CloseHandle(handle);
+			}
+			return TRUE;
 		}
-
 		return TRUE;
 	}
-
-	return TRUE;
+	catch (...)
+	{
+		wchar_t buf[256];
+		FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+			NULL, GetLastError(), MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+			buf, (sizeof(buf) / sizeof(wchar_t)), NULL);
+		MessageBox(NULL, "ERROR", (char*)buf, MB_OK);
+	}
 }
