@@ -9,8 +9,6 @@
 #include "pch.h"
 #include "MSCorEE.h"
 #include <iostream>
-#include <sstream>
-#include <vector>
 #include <Windows.h>
 #include <thread>
 #include "vk_code.h"
@@ -31,7 +29,7 @@ UINT_PTR userAssemblyBaseAddress = 0;
 float SavedCoords[3] = { 0,0,0 };
 float OldCoords[3] = { 0,0,0 };
 bool FPS = false, ESP = false, IBC = false;
-const char *lastLines[5];
+//const char* lastLines[5];
 
 void clearConsole();
 void addInfoLine(char* newLine);
@@ -51,90 +49,77 @@ void WriteMemory(UINT_PTR address, int value, int length);
 
 unsigned long main_thread(void*)
 {
-	try {
-		if (!AllocConsole())
+	if (!AllocConsole())
+	{
+		return 1;
+	}
+
+	freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
+	freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
+	SetConsoleTitle(TEXT("YOUR_NAME_HERE | "));
+	HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
+	HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
+	unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
+	unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
+	userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
+	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
+	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
+	printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
+	bool Continue = true;
+	bool block = false;
+
+	RegisterHotKey(NULL, HOTKEY_F4, MOD_NOREPEAT, VK_F4);
+	RegisterHotKey(NULL, HOTKEY_F5, MOD_NOREPEAT, VK_F5);
+	RegisterHotKey(NULL, HOTKEY_F6, MOD_NOREPEAT, VK_F6);
+	RegisterHotKey(NULL, HOTKEY_F7, MOD_NOREPEAT, VK_F7);
+	RegisterHotKey(NULL, HOTKEY_F8, MOD_NOREPEAT, VK_F8);
+	RegisterHotKey(NULL, HOTKEY_F9, MOD_NOREPEAT, VK_F9);
+
+	MSG msg = { 0 };
+	//std::thread tMenu(PrintMenu);
+	//tMenu.join();
+	while (GetMessage(&msg, NULL, 0, 0) != 0)
+	{
+		if (msg.message == WM_HOTKEY)
 		{
-			return 1;
-		}
-
-		freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
-		freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-		SetConsoleTitle(TEXT("SiedlerLP | "));
-		HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
-		HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
-		unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
-		unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
-		userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
-		printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
-		printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
-		printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
-		bool Continue = true;
-		bool block = false;
-
-		RegisterHotKey(NULL, HOTKEY_F4, MOD_NOREPEAT, VK_F4);
-		RegisterHotKey(NULL, HOTKEY_F5, MOD_NOREPEAT, VK_F5);
-		RegisterHotKey(NULL, HOTKEY_F6, MOD_NOREPEAT, VK_F6);
-		RegisterHotKey(NULL, HOTKEY_F7, MOD_NOREPEAT, VK_F7);
-		RegisterHotKey(NULL, HOTKEY_F8, MOD_NOREPEAT, VK_F8);
-		RegisterHotKey(NULL, HOTKEY_F9, MOD_NOREPEAT, VK_F9);
-
-		MSG msg = { 0 };
-		//std::thread tMenu(PrintMenu);
-		//tMenu.join();
-		while (GetMessage(&msg, NULL, 0, 0) != 0)
-		{
-			if (msg.message == WM_HOTKEY)
+			switch (msg.wParam)
 			{
-				switch (msg.wParam)
-				{
-				case HOTKEY_F4:
-					SaveCurrentCoords();
-					break;
-				case HOTKEY_F5: {
-					if (SavedCoords[0] == 0 || SavedCoords[1] == 0 || SavedCoords[2] == 2) printf("[+] No teleport-coordiantes saved\n");
-					std::thread t1(FreezeTeleport);
-					std::thread tMove(WalkForTeleport);
-					t1.join();
-					tMove.join();
-					break;
-				}
-				case HOTKEY_F6:
-					ToggleFPS();
-					break;
-				case HOTKEY_F7:
-					ESPHack();
-					break;
-				case HOTKEY_F8:
-					//InstantBowCharge();
-					break;
-				case HOTKEY_F9:
-					FreeConsole();
-					return 0;
-					break;
-				default:
-					break;
-				}
+			case HOTKEY_F4:
+				SaveCurrentCoords();
+				break;
+			case HOTKEY_F5: {
+				if (SavedCoords[0] == 0 || SavedCoords[1] == 0 || SavedCoords[2] == 2) printf("[+] No teleport-coordiantes saved\n");
+				std::thread t1(FreezeTeleport);
+				std::thread tMove(WalkForTeleport);
+				t1.join();
+				tMove.join();
+				break;
+			}
+			case HOTKEY_F6:
+				ToggleFPS();
+				break;
+			case HOTKEY_F7:
+				ESPHack();
+				break;
+			case HOTKEY_F8:
+				//InstantBowCharge();
+				break;
+			case HOTKEY_F9:
+				FreeConsole();
+				break;
+			default:
+				break;
 			}
 		}
-		FreeConsole();
-		return 0;
 	}
-	catch (...)
-	{
-		wchar_t buf[256];
-		FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-			NULL, GetLastError(), MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-			buf, (sizeof(buf) / sizeof(wchar_t)), NULL);
-		MessageBox(NULL, "ERROR", (char*)buf, MB_OK);
-		FreeConsole();
-		return 0;
-	}
+	FreeConsole();
+	return 0;
 }
 
 void WriteMemory(UINT_PTR address, int value, int length) {
 	MEMORY_BASIC_INFORMATION mbi;
 	VirtualQuery((void*)address, &mbi, sizeof(mbi));
-	if (VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_READWRITE, &mbi.Protect))
+	if (VirtualProtect(mbi.BaseAddress, mbi.RegionSize, PAGE_EXECUTE_READWRITE, &mbi.Protect))
 	{
 		memset((void*)address, value, length);
 		VirtualProtect(mbi.BaseAddress, mbi.RegionSize, mbi.Protect, &mbi.Protect);
@@ -147,7 +132,7 @@ void ESPHack() {
 	MonsterLevel();
 	ChestESP();
 	ChestESPDist();
-	char line[UCHAR_MAX] = "";
+	char line[40] = "";
 	snprintf(line, sizeof line, "[+] ESP (Monster & Chest): %s\n", (ESP ? "enabled" : "disabled"));
 	printf(line);
 	//char line[50];
@@ -184,7 +169,7 @@ void InstantBowCharge() {
 		WriteMemory(userAssemblyBaseAddress + 0x346DCD1, 0x47, 1);
 		WriteMemory(userAssemblyBaseAddress + 0x346DCD2, 0x10, 1);
 	}
-	char line[UCHAR_MAX] = "";
+	char line[35] = "";
 	snprintf(line, sizeof line, "[+] InstantBowCharge: %s\n", (IBC ? "enabled" : "disabled"));
 	printf(line);
 	//char line[50];
@@ -204,7 +189,7 @@ void SaveCurrentCoords() {
 	float Z = (*(float*)((*(UINT_PTR*)((*(UINT_PTR*)(unityPlayerOffsetAddress + 0x88)) + 0x8)) + 0xA4));
 	float Y = (*(float*)((*(UINT_PTR*)((*(UINT_PTR*)(unityPlayerOffsetAddress + 0x88)) + 0x8)) + 0xA0));
 	char line[UCHAR_MAX] = "";
-	snprintf(line, sizeof line, "[+] [SAVED] X: %f\n    Y: %f\n    Z: %f\n", X, Y, Z);
+	snprintf(line, sizeof line, "[+] [SAVED]\n X: %f\n Y: %f\n Z: %f\n", X, Y, Z);
 	printf(line);
 	SavedCoords[0] = X;
 	SavedCoords[1] = Z;
@@ -310,33 +295,22 @@ void PrintMenu() {
 }
 void addInfoLine(char* newLine) {
 	//std::lock_guard<std::mutex> lockGuard(mlastLines);
-	for (int i = 0; i < sizeof lastLines; i++)
+	/*for (int i = 0; i < sizeof lastLines; i++)
 	{
 		if (i == (sizeof lastLines) - 1) lastLines[i] = newLine;
 		else lastLines[i] = lastLines[i + 1];
-	}
+	}*/
 }
 
 BOOL APIENTRY DllMain(HMODULE module_handle, DWORD call_reason, LPVOID reserved)
 {
-	try
+	if (call_reason == DLL_PROCESS_ATTACH)
 	{
-		if (call_reason == DLL_PROCESS_ATTACH)
+		if (const auto handle = CreateThread(nullptr, 0, &main_thread, nullptr, 0, nullptr); handle != nullptr)
 		{
-			if (const auto handle = CreateThread(nullptr, 0, &main_thread, nullptr, 0, nullptr); handle != nullptr)
-			{
-				CloseHandle(handle);
-			}
-			return TRUE;
+			CloseHandle(handle);
 		}
 		return TRUE;
 	}
-	catch (...)
-	{
-		wchar_t buf[256];
-		FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-			NULL, GetLastError(), MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-			buf, (sizeof(buf) / sizeof(wchar_t)), NULL);
-		MessageBox(NULL, "ERROR", (char*)buf, MB_OK);
-	}
+	return TRUE;
 }
