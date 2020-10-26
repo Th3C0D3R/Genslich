@@ -23,11 +23,14 @@ int main(int argc, char** argv)
         printf("[!] dll does not exists in \"%s\"\n", dll_path);
         return 1;
     }
-
-    if (!mem_utils::init())
+    
+    int counter = 0;
+    while (!mem_utils::init())
     {
-        printf("[!] failed to initialize memory utility\n");
-        return 1;
+        if(counter % 4 == 0)
+            printf("[!] failed to initialize memory utility\nIs the Game running?\nIs the Window_Title correct?");
+        counter += 1;
+        Sleep(1000);
     }
 
     if (!injector::inject(dll_path))
