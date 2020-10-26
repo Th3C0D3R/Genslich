@@ -148,15 +148,15 @@ void MonsterLevel() {
 	printf("MonsterLevel Address: 0x%llx\n", userAssemblyBaseAddress + 0x125AD3E);
 }
 void MonsterHP() {
-	//WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
+	WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
 	printf("MonsterHP Address: 0x%llx\n", userAssemblyBaseAddress + 0x12597BB);
 }
 void ChestESP() {
-	//WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
+	WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
 	printf("ChestESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F317);
 }
 void ChestESPDist() {
-	//WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
+	WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
 	printf("ChestDistESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F39A);
 }
 void InstantBowCharge() {
