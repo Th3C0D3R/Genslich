@@ -1,0 +1,173 @@
+Berries|X:-21.34-Y:1611.8-Z:266.82
+Bird Eggs|X:1745.57-Y:957.93-Z:352.2
+Calla lillie#1|X:-480.14-Y:2155.04-Z:211.55
+Calla lillie#2|X:-557-Y:1982.12-Z:220.56
+Cecilia patch #2|X:-1664.83-Y:2530.81-Z:341.6
+Cecilia patch #3|X:-1692.95-Y:2552.37-Z:349.71
+Cecilia patch #4|X:-1691.27-Y:2583.44-Z:359.88
+Cecilia patch #5|X:-1724.29-Y:2601.37-Z:370.97
+Cecilia patch#6|X:-1724.24-Y:2512.63-Z:342.93
+Cecilia#1|X:-1719.97-Y:2475.08-Z:328.74
+Cecilia#2|X:-1718.16-Y:2482-Z:330.99
+Chili#1,|X:1487.89-Y:1052.47-Z:270.99
+Chili#10|X:-28.21-Y:1499.14-Z:265.79
+Chili#2|X:658.17-Y:1776.95-Z:227.28
+Chili#3|X:556.96-Y:1748.53-Z:252.44
+chili#4|X:1376.46-Y:982.84-Z:270.24
+Chili#5|X:1377.32-Y:982.06-Z:270.29
+Chili#6|X:1405.92-Y:1025.95-Z:317.43
+Chili#7|X:1381.36-Y:1088.91-Z:288.12
+Chili#8|X:1654.38-Y:907.25-Z:238.49
+Chili#9|X:1684.6-Y:941.28-Z:232.29
+Crabs - Talk Jill, ask what she like|X:-1557.17-Y:1796.66-Z:195.86
+Crabs - Talk to ulfr|X:-973.13-Y:2341.17-Z:203.61
+Crystalfly|X:-1640.67-Y:2361.87-Z:299.58
+Dandelion#1|X:-52.26-Y:1665.97-Z:268.92
+Dandelion#2|X:-89.68-Y:1650.91-Z:256.54
+Dandelion#3|X:-166.44-Y:1650.45-Z:244.32
+Dandelions#4|X:-129.79-Y:1588.23-Z:241.06
+Dandelions#5|X:-981.31-Y:2238.28-Z:211.17
+Exquisite|X:971.15-Y:-270.58-Z:191.11
+Frog|X:-50.16-Y:515.73-Z:200.67
+Geo x3|X:780.86-Y:880.98-Z:247.5
+Glaze Lily #1|X:281.03-Y:-664.09-Z:222.69
+Glaze Lily #10|X:599.43-Y:1914.22-Z:224.07
+Glaze Lily #11|X:620.81-Y:1911.46-Z:220.56
+Glaze Lily #12|X:618.81-Y:1922.77-Z:222.19
+Glaze Lily #13|X:623.15-Y:1886.59-Z:217.58
+Glaze Lily #14|X:637.01-Y:1852.35-Z:215.32
+Glaze Lily #15|X:663.98-Y:1918.78-Z:217.58
+Glaze Lily #16|X:703.45-Y:1901.83-Z:215.84
+Glaze Lily #17|X:744.9-Y:1909.2-Z:214.02
+Glaze Lily #2|X:718.34-Y:1691.77-Z:213.58
+Glaze Lily #3|X:707.07-Y:1666.85-Z:215.39
+Glaze Lily #4|X:702.89-Y:1780.81-Z:217.84
+Glaze Lily #5|X:639.53-Y:1761.28-Z:220.18
+Glaze Lily #6|X:560.2-Y:1765.59-Z:213.34
+Glaze Lily #7|X:591.75-Y:1853.75-Z:213.68
+Glaze Lily #8|X:571.95-Y:1884.69-Z:221.33
+Glaze Lily #9|X:574.09-Y:1912.24-Z:229.34
+Glaze Lily#18|X:283-Y:-657.32-Z:221.91
+Glaze Lily19|X:474.16-Y:-461.28-Z:239.59
+horsetail and lotus|X:250.01-Y:1167.1-Z:200.86
+Horsetail#1|X:131.23-Y:1648.92-Z:200.5
+Horsetail#2|X:197.4-Y:1375.89-Z:200.53
+Horsetail#3|X:184.8-Y:1376.09-Z:200.79
+Horsetail#4|X:207.41-Y:1400.94-Z:200.47
+Horsetail#5|X:273.07-Y:1395.88-Z:200.74
+Lamp Grass #10|X:-317.59-Y:2306.95-Z:270.59
+Lamp Grass#1|X:-1167.58-Y:2313.48-Z:211.65
+Lamp Grass#10|X:-358.1-Y:2458.53-Z:300.49
+Lamp Grass#11|X:-496.69-Y:2099.82-Z:216.6
+Lamp Grass#12|X:-490.72-Y:2196.77-Z:210.39
+Lamp Grass#13|X:-473.98-Y:2209.11-Z:213.6
+Lamp Grass#14|X:-495.81-Y:2099.29-Z:216.97
+Lamp Grass#15|X:-548.98-Y:2167.19-Z:210.12
+Lamp Grass#2|X:-1165.4-Y:2288.13-Z:212.02
+Lamp Grass#3|X:-1111.8-Y:2357.99-Z:209.88
+Lamp Grass#4|X:-1110.26-Y:2367.53-Z:209.74
+Lamp Grass#5|X:-1103.15-Y:2363.08-Z:210.62
+Lamp Grass#6|X:-491.41-Y:2196.09-Z:210.19
+Lamp Grass#7|X:-473.99-Y:2210.22-Z:213.69
+Lamp Grass#8|X:-1092.98-Y:2380.23-Z:213.94
+Lamp Grass#9|X:-1099.03-Y:2400.12-Z:212.77
+Lotus big pond liyue|X:403.65-Y:-508.18-Z:230.59
+Lotus Pond x3|X:428.62-Y:605.97-Z:202.68
+Lotus pond x4|X:-136.7-Y:1558.06-Z:235.01
+Lotus Pond|X:1724.79-Y:543.87-Z:232.87
+Lotus|X:267.49-Y:1189.96-Z:200.27
+Meat area#1|X:-1569.61-Y:2392.06-Z:282.88
+Meat area#2|X:-805.31-Y:1928.51-Z:210.56
+Meat area#3|X:-111.89-Y:2206.46-Z:237.19
+NPC Will - Fish|X:-1557.13-Y:1796.65-Z:195.98
+Philanemo Mushroom #1|X:-770.19-Y:2207.88-Z:250.34
+Philanemo Mushroom #10|X:-889.76-Y:2200.37-Z:214.68
+Philanemo Mushroom #11|X:-889.76-Y:2200.37-Z:214.68
+Philanemo Mushroom #12-13|X:-942.49-Y:2299.88-Z:215.03
+Philanemo Mushroom #14|X:-870.47-Y:2340.16-Z:241.99
+Philanemo Mushroom #15-17|X:-926.42-Y:1970.28-Z:219.76
+Philanemo Mushroom #18-20|X:-933.43-Y:1921.57-Z:224.67
+Philanemo Mushroom #2|X:-819.64-Y:2223.71-Z:251.38
+Philanemo Mushroom #21-22|X:-936.85-Y:1922.61-Z:224.85
+Philanemo Mushroom #23|X:-915.66-Y:1939.68-Z:242.79
+Philanemo Mushroom #24|X:-870.82-Y:1936.5-Z:232.9
+Philanemo Mushroom #25|X:-869.82-Y:1891.69-Z:241.96
+Philanemo Mushroom #26|X:-502.78-Y:1726.05-Z:220.69
+Philanemo Mushroom #27|X:-468.12-Y:1715.41-Z:207.9
+Philanemo Mushroom #28|X:-417.92-Y:1704-Z:215.28
+Philanemo Mushroom #3|X:-846.41-Y:2217.88-Z:239.18
+Philanemo Mushroom #4|X:-869.35-Y:2185.16-Z:221.64
+Philanemo Mushroom #5|X:-874.93-Y:2190.28-Z:217.07
+Philanemo Mushroom #6|X:-875.39-Y:2188.39-Z:217.31
+Philanemo Mushroom #7|X:-906.2-Y:2192.16-Z:213.96
+Philanemo Mushroom #8|X:-908.07-Y:2198.8-Z:212.85
+Philanemo Mushroom #9|X:-906.57-Y:2203.59-Z:224.56
+Qingxin# (1)|X:743.94-Y:720.43-Z:270.1
+Qingxin# (10)|X:1184.12-Y:262.72-Z:265.54
+Qingxin# (11)|X:840.15-Y:662.96-Z:253.91
+Qingxin# (12)|X:695.18-Y:808.02-Z:254.68
+Qingxin# (2)|X:947.41-Y:828.23-Z:276.18
+Qingxin# (3)|X:738.73-Y:960.11-Z:273.13
+Qingxin# (4)|X:1667.88-Y:875.07-Z:360.06
+Qingxin# (5)|X:745.65-Y:956.41-Z:267.85
+Qingxin# (6)|X:1281-Y:865.22-Z:360.92
+Qingxin# (7)|X:-226.77-Y:601.41-Z:311.01
+Qingxin# (8)|X:936.65-Y:825.49-Z:287.03
+Qingxin# (9)|X:828.51-Y:721.17-Z:254.97
+Snapdragon# (1)|X:521.17-Y:213.74-Z:202.42
+Snapdragon# (2)|X:1408.98-Y:999.77-Z:270.02
+Snapdragon# (3)|X:1409.34-Y:1000.56-Z:270.11
+Snapdragon# (4)|X:1362.4-Y:995.45-Z:270.37
+Snapdragon# (5)|X:-520.94-Y:2236.74-Z:204.34
+Violet Grass# (1)|X:680.59-Y:810.66-Z:240.12
+Violet Grass# (10)|X:1725.74-Y:898.29-Z:286.02
+Violet Grass# (11)|X:1721.3-Y:921.79-Z:281.77
+Violet Grass# (12)|X:1750.3-Y:965.33-Z:306.69
+Violet Grass# (13)|X:1584.49-Y:942.87-Z:339.5
+Violet Grass# (14)|X:767.77-Y:-299.26-Z:229.77
+Violet Grass# (15)|X:1539.78-Y:919.81-Z:308.9
+Violet Grass# (16)|X:-272.57-Y:619.96-Z:327.33
+Violet Grass# (17)|X:-274.95-Y:591.02-Z:284.28
+Violet Grass# (18)|X:-210.44-Y:579-Z:257.39
+Violet Grass# (19)|X:1194.87-Y:-167.04-Z:218.86
+Violet Grass# (2)|X:807.27-Y:1861.27-Z:217.78
+Violet Grass# (20)|X:722.01-Y:974.62-Z:241.05
+Violet Grass# (21)|X:1194.48-Y:-171.16-Z:216.64
+Violet Grass# (22)|X:741.02-Y:978.13-Z:251.9
+Violet Grass# (23)|X:862.29-Y:835.05-Z:298.54
+Violet Grass# (24)|X:872.42-Y:843.59-Z:288.12
+Violet Grass# (25)|X:866.71-Y:853.85-Z:275.62
+Violet Grass# (26)|X:948.53-Y:834.06-Z:265.31
+Violet Grass# (27)|X:940.86-Y:833.32-Z:279.25
+Violet Grass# (28)|X:738.5-Y:713.76-Z:255.8
+Violet Grass# (29)|X:752.68-Y:717.67-Z:255.13
+Violet Grass# (3)|X:481.8-Y:550.58-Z:204.71
+Violet Grass# (30)|X:695.01-Y:822.28-Z:240.7
+Violet Grass# (4)|X:1284.3-Y:1192.28-Z:288.11
+Violet Grass# (5)|X:1291.6-Y:1219.8-Z:287.88
+Violet Grass# (6)|X:1558.63-Y:939.85-Z:293.78
+Violet Grass# (7)|X:1653.82-Y:883.73-Z:301.41
+Violet Grass# (8)|X:1674.41-Y:867.94-Z:332.93
+Violet Grass# (9)|X:1677.79-Y:865.24-Z:295.18
+Wolfhook# (1)|X:-351.64-Y:2044.26-Z:262.24
+Wolfhook# (2)|X:-426.93-Y:2155.35-Z:239.37
+Wolfhook# (3)|X:-394.86-Y:2091.69-Z:261.82
+Wolfhook# (4)|X:-362.89-Y:2071.5-Z:262.41
+Wolfhook# (5)|X:-327.5-Y:2004.84-Z:257.77
+Jade|X:-246.19-Y:612.58-Z:296.4
+Lapis|X:1448.48-Y:1212.35-Z:275.11
+Lapis10new|X:794.46-Y:92.91-Z:214.55
+Lapis11new|X:866.53-Y:656.09-Z:218.78
+Lapis12new|X:875.38-Y:787.94-Z:239.45
+Lapis13new|X:794.86-Y:784.39-Z:227.53
+Lapis14 new|X:900.59-Y:788.65-Z:240.6
+Lapis15new|X:678.86-Y:787.48-Z:236.11
+Lapis2|X:1520.55-Y:989.38-Z:272.68
+Lapis3|X:855.4-Y:846.73-Z:269.83
+Lapis4|X:1109.15-Y:228.73-Z:224.44
+Lapis5|X:715.22-Y:-104.85-Z:262.7
+Lapis6|X:1872.24-Y:753.04-Z:372.08
+Lapis7|X:798.37-Y:222.66-Z:205
+Lapis8new|X:865.86-Y:172.5-Z:211.58
+Lapis9new|X:793.17-Y:109.61-Z:210.92
+Minerals|X:1359.18-Y:1020.53-Z:273.01

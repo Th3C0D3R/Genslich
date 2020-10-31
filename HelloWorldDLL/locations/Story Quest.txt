@@ -1,0 +1,25 @@
+01 Talk to Kaeya|X:-780.47-Y:2244.19-Z:239.76
+01.01 Talk to Kaeya at the meeting spot|X:-793.37-Y:2186.64-Z:230.09
+01.02 Go to adventure guild listen to report|X:-838.16-Y:2187.98-Z:225.05
+01.03 Report to Kaeya|X:-792.88-Y:2240.78-Z:237.3
+01.04 Meet at location |X:-1123.79-Y:2281.24-Z:207.68
+01.05 Solve the Mystery|X:-844.07-Y:2218.07-Z:246.56
+01.06 Solve the Mystery part 2|X:-922.41-Y:1743.95-Z:272.93
+01.07 Travel to treasure|X:-1550.89-Y:1657.23-Z:198.75
+01.08 Dungeon Room 1|X:433.03-Y:343.59-Z:-27.73
+01.09 Dungeon End|X:338.75-Y:341.83-Z:-19.22
+02.01 Glide With the wind Talk to amber|X:-753.15-Y:2341.54-Z:251.05
+02.02 Go to the Exam Point|X:-1311.75-Y:1723.85-Z:264.33
+02.03 End Gliding|X:-1429.33-Y:1874.39-Z:196.92
+02.04 door of mondas|X:-691.34-Y:2351.24-Z:261.23
+02.05 Otto Knight|X:-827.47-Y:2193.63-Z:225.02
+02.06 Track Raptor|X:-849.9-Y:1996.95-Z:204.12
+02.07 Investigate Sound ahed|X:-807.42-Y:1974.63-Z:203.58
+02.08 Start of Dungeon|X:-0.38-Y:103.85-Z:11.82
+02.09 half dungeon|X:34.55-Y:-83.79-Z:38.28
+02.10 Dungeon chest 1|X:-17.01-Y:221.57-Z:5.84
+02.11 Dungeon chest 2|X:-59.51-Y:220.81-Z:7.47
+02.12 Main room of enemies|X:-50.04-Y:196.84-Z:4.09
+02.13 before end of dungeon|X:-12.89-Y:16.75-Z:15.76
+02.14 end of dungeon|X:-14.47-Y:-66.82-Z:11.68
+02.15 Go get licence cathedral|X:-689.62-Y:2353.59-Z:261.08

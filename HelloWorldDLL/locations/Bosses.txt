@@ -1,0 +1,8 @@
+Ameno Hypostasis|X:-1289.71-Y:2888.48-Z:270.96
+Cyro Regisvine|X:-1663.59-Y:2100.2-Z:191.69
+Electro Hypostasis|X:-1920.48-Y:1314.08-Z:331.1
+Geo Hypostasis|X:-840.73-Y:25.68-Z:201.89
+Lupus Boreas|X:-286.81-Y:1981.81-Z:251.29
+Oceanid|X:264.13-Y:1780.92-Z:201.72
+Pyro Regisvine|X:952.56-Y:162.48-Z:198.34
+StormTerror|X:122.89-Y:2658.28-Z:301.67

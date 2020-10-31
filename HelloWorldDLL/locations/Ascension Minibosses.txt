@@ -1,0 +1,127 @@
+Bandits 1|X:193.84-Y:373.29-Z:218.2
+Bandits 2|X:232.6-Y:272.07-Z:222.32
+Bandits 3|X:43.05-Y:128.71-Z:254.24
+Bandits 4|X:-57.47-Y:52.06-Z:204.5
+Bandits 5|X:-137.14-Y:-177.37-Z:217.91
+Bandits 6|X:671.11-Y:-638.49-Z:222.56
+Bandits 7|X:741.65-Y:-793.85-Z:204.23
+Bandits 8|X:689.99-Y:-885-Z:223.29
+Bandits 9|X:1279.09-Y:-507.79-Z:235.61
+Cryo Flower 1|X:381.08-Y:2538.78-Z:183.66
+Cryo Flower 2|X:-207.24-Y:2215.52-Z:280.14
+Cryo Flower 3|X:-1957.44-Y:1490.83-Z:311.32
+Cryo Flower 4|X:-1755.08-Y:1301.28-Z:303.17
+Cryo Flower 5|X:-1594.89-Y:1314.21-Z:272.34
+Cryo Flower 6|X:-307.36-Y:396.4-Z:201.33
+Cryo Flower 7|X:1301.32-Y:-555.83-Z:227.75
+Cryo Flower 8|X:1069.13-Y:-585.14-Z:167.82
+Cryo Flower 9|X:1690.25-Y:957.97-Z:233.66
+Cryo Mage 1|X:-1584.13-Y:2228.23-Z:244.88
+Cryo Mage 10|X:1171.06-Y:286.25-Z:256.44
+Cryo Mage 11|X:1000.63-Y:364.45-Z:233.16
+Cryo Mage 12|X:798.25-Y:531.98-Z:200.11
+Cryo Mage 2|X:-208.42-Y:2217.45-Z:280.23
+Cryo Mage 3|X:-1373.62-Y:1365.27-Z:291.1
+Cryo Mage 4|X:-1233.16-Y:1596.83-Z:289.62
+Cryo Mage 5|X:455-Y:228.73-Z:207.06
+Cryo Mage 6|X:-211.45-Y:-141.95-Z:201.61
+Cryo Mage 7|X:889.75-Y:-883.41-Z:172.31
+Cryo Mage 8|X:1299.95-Y:-885-Z:156.32
+Cryo Mage 9|X:1076.1-Y:-479.29-Z:197.71
+Electro Cicin Mage 1|X:-1734.84-Y:2915.42-Z:225.18
+Electro Cicin Mage 2|X:-416.07-Y:2664-Z:283.79
+Electro Cicin Mage 3|X:-787.82-Y:1873.18-Z:237.91
+Electro Cicin Mage 4|X:-1172.83-Y:1464.32-Z:305.85
+Electro Cicin Mage 5|X:479.24-Y:1561.47-Z:240.36
+Electro Cicin Mage 6|X:-433.85-Y:417.67-Z:201.18
+Electro Cicin Mage 7|X:-14.83-Y:108.79-Z:204.62
+Electro Cicin Mage 8|X:-50.38-Y:-106.05-Z:253.95
+Electro Cicin Mage 9|X:1243.08-Y:-205.55-Z:241.62
+Fatui Pyro Agent 1|X:-330.28-Y:460.51-Z:200.55
+Fatui Pyro Agent 2|X:525.07-Y:214.6-Z:202.05
+Fatui Pyro Agent 3|X:-489.18-Y:-153.53-Z:201.85
+Fatui Pyro Agent 4|X:1004.6-Y:-901.75-Z:180.42
+Fatui Pyro Agent 5|X:1043.99-Y:-463.64-Z:224.27
+Fatui Pyro Agent 6|X:927.53-Y:-133.82-Z:182.57
+Fatui Pyro Agent 7|X:1249.01-Y:-160.29-Z:235.62
+Fatui Skirmisher 01|X:433.53-Y:2774.93-Z:231.7
+Fatui Skirmisher 02|X:-1802.72-Y:1222.84-Z:314.32
+Fatui Skirmisher 03|X:-1286.95-Y:1383.93-Z:313.78
+Fatui Skirmisher 04|X:-1300.19-Y:1533.41-Z:287.97
+Fatui Skirmisher 05|X:603.35-Y:-789.12-Z:316.32
+Fatui Skirmisher 06|X:1151.77-Y:-531.68-Z:185.28
+Fatui Skirmisher 07|X:876.37-Y:-159.15-Z:203.34
+Fatui Skirmisher 08|X:903.98-Y:-228.06-Z:181.62
+Fatui Skirmisher 09|X:976.73-Y:-207.64-Z:181.99
+Fatui Skirmisher 10|X:1062.98-Y:-243.12-Z:197.83
+Fatui Skirmisher 11|X:1235.3-Y:141.21-Z:192.02
+Fatui Skirmisher 12|X:959.5-Y:429.94-Z:215.18
+Fatui Skirmisher 13|X:872.99-Y:480.83-Z:224.28
+Fatui Skrimisher 14|X:675.85-Y:947.86-Z:212.36
+Geovishap Hatchling 1|X:345.07-Y:1493.48-Z:205.12
+Geovishap Hatchling 2|X:438.5-Y:1124.73-Z:206.62
+Geovishap Hatchling 3|X:-821.43-Y:-455.45-Z:204.23
+Geovishap Hatchling 4|X:1271.74-Y:-88.15-Z:228.1
+Geovishap Hatchling 5|X:1138.62-Y:120.13-Z:219.64
+Geovishap Hatchling 6|X:1806.46-Y:890.54-Z:233.77
+Geovishap Hatchling 7|X:1087.67-Y:1532.14-Z:202.19
+Geovishap Hatchling 8|X:787.31-Y:1090.31-Z:201.31
+Mitachurl 01|X:-1650.03-Y:2277.15-Z:266.81
+Mitachurl 02|X:342.62-Y:2712.43-Z:208.41
+Mitachurl 03|X:277.88-Y:2931.38-Z:216.31
+Mitachurl 04|X:-58.04-Y:2875.86-Z:218.34
+Mitachurl 05|X:400.38-Y:2422.75-Z:223.86
+Mitachurl 06|X:-457.41-Y:2166.18-Z:236.72
+Mitachurl 07|X:-1169.12-Y:1549.5-Z:293.24
+Mitachurl 08|X:283.68-Y:1582.01-Z:248.64
+Mitachurl 09|X:751.46-Y:1415.63-Z:200.96
+Mitachurl 10|X:645.27-Y:1395.94-Z:211.96
+Mitachurl 11|X:-65.76-Y:418.29-Z:202.85
+Mitachurl 12|X:-33.95-Y:435.24-Z:208.02
+Mitachurl 13|X:294.02-Y:473.18-Z:202.74
+Mitachurl 14|X:-902.83-Y:-144.33-Z:201.78
+Mitachurl 15|X:-911.9-Y:-84.14-Z:201.53
+Mitachurl 16|X:-1000.06-Y:-193.54-Z:201.3
+Mitachurl 17|X:908.61-Y:-837.34-Z:184.24
+Mitachurl 18|X:1063.68-Y:-829.27-Z:173.68
+Mitachurl 19|X:1259.58-Y:-700.91-Z:209.4
+Mitachurl 20|X:1290.4-Y:-691.86-Z:214
+Mitachurl 21|X:1294.47-Y:-659.44-Z:213.25
+Mitachurl 22|X:1299.95-Y:-885-Z:156.32
+Mitachurl 23|X:862.36-Y:-521.2-Z:209.02
+Mitachurl 24|X:926.33-Y:-498.15-Z:182.17
+Mitachurl 25|X:992.33-Y:238.4-Z:238.38
+Mitachurl 26|X:1180.44-Y:447.27-Z:267.19
+Mitachurl 27|X:606.53-Y:538.46-Z:201.52
+Mitachurl 28|X:686.27-Y:638.93-Z:217.31
+Mitachurl 29|X:816.01-Y:659.81-Z:241.24
+Mitachurl 30|X:1259.68-Y:1585.45-Z:226.57
+Mitachurl 31|X:1039.12-Y:1125.26-Z:218.14
+Pyro Flower 1|X:44.78-Y:2893.91-Z:211.22
+Pyro Flower 2|X:332.63-Y:174.06-Z:223.06
+Pyro Flower 3|X:871.1-Y:193.7-Z:208.2
+Pyro Flower 4|X:1010.76-Y:1186.11-Z:229.17
+Pyro Mage 1|X:-1000.06-Y:-193.54-Z:201.3
+Pyro Mage 2|X:1294.47-Y:-659.42-Z:213.25
+Pyro Mage 3|X:1250.07-Y:-460.44-Z:209.46
+Pyro Mage 4|X:885.41-Y:-499.93-Z:186.73
+Pyro Mage 5|X:1262.86-Y:230.68-Z:203.14
+Pyro Mage 6|X:789.53-Y:689.01-Z:239.99
+Pyro Mage 7|X:1775.57-Y:693.53-Z:319.57
+Ruin Guard 01|X:-1738.88-Y:2858.51-Z:255.29
+Ruin Guard 02|X:-1713.21-Y:2347.94-Z:284.93
+Ruin Guard 03|X:186.98-Y:2664.72-Z:230.78
+Ruin Guard 04|X:8.43-Y:2468.3-Z:209.11
+Ruin Guard 05|X:-321.29-Y:2702.74-Z:250.61
+Ruin Guard 06|X:485.7-Y:254.67-Z:235.53
+Ruin Guard 07|X:100.24-Y:-66.4-Z:269.01
+Ruin Guard 08|X:-733.85-Y:-349.27-Z:206.4
+Ruin Guard 09|X:1093.47-Y:-285.15-Z:207.44
+Ruin Guard 10|X:1156.53-Y:-345.77-Z:223.97
+Ruin Guard 11|X:1193.74-Y:-251.28-Z:225.48
+Ruin Guard 12|X:1160.59-Y:488.48-Z:240.73
+Ruin Guard 13|X:952.88-Y:762.69-Z:255.47
+Ruin Hunter 1|X:-172.8-Y:340.21-Z:200.83
+Ruin Hunter 2|X:979.42-Y:-633.69-Z:222.99
+Ruin Hunter 3|X:1191.33-Y:-299.16-Z:231.06
+Ruin Hunter 4|X:1084.26-Y:349.25-Z:257.16

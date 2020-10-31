@@ -1,0 +1,34 @@
+01.1 (First waypoint teleport)|X:-1639.39-Y:2680.84-Z:197.83
+01.2 (Cliff teleport)|X:-1610.07-Y:2622.97-Z:210.17
+01.3 (Overlook teleport)|X:-1481.75-Y:2609.64-Z:237.22
+01.35 (Swim teleport)|X:-1332-Y:2563.97-Z:214.29
+01.40 (Dragon teleport)|X:-1157.97-Y:2417.61-Z:202.76
+01.45 (Teardrop)|X:-1134.52-Y:2347.29-Z:212.22
+02 (Amber first)|X:-1134.77-Y:2298.7-Z:210.49
+03 (Grab teleport of Domain)|X:-1171.01-Y:2137.03-Z:208.79
+04 (Hillichuri checkpoint)|X:-1127.62-Y:2193.09-Z:216.48
+05 (Hillichuri camp)|X:-1187.99-Y:2219.88-Z:225.48
+06 (Mondstat entrance)|X:-943.51-Y:2224.33-Z:211.07
+07 (Glider Quest 1st CP)|X:-772.93-Y:2311.02-Z:251.02
+08 (Glider Quest FINISH)|X:-878.01-Y:2263.7-Z:218.52
+09 (Knight door teleport)|X:-778.57-Y:2243.33-Z:239.73
+10 (Teleport to Amber crystal)|X:49.75-Y:-147.14-Z:19.02
+11 (Teleport to Kaeya)|X:-1637.18-Y:2153.76-Z:235.35
+12 (Teleport to Kaeya crystal)|X:173.27-Y:393.96-Z:-20.22
+13 (Teleport to Lisa)|X:-1412.45-Y:1666.1-Z:256.59
+13.5 (Teleport to Lisa Temple)|X:-1434.58-Y:1659.74-Z:260.4
+14 (Teleport to Lisa crystal)|X:250.35-Y:533.76-Z:-0.78
+15 (Anemo 1)|X:-1401.22-Y:2010.82-Z:211.05
+16 (Anemo 2)|X:-1349.28-Y:1862.3-Z:205.01
+17 (Anemo 3)|X:-1257.9-Y:1887.48-Z:223.02
+18 (Anemo 4)|X:-1225.5-Y:1826.33-Z:215.43
+19 (Anemo 5)|X:-1373.8-Y:1730.61-Z:284.38
+20 (Anemo 6)|X:-1421.16-Y:1629.37-Z:262.48
+21 (Anemo 7)|X:-1385.91-Y:1527.38-Z:257.54
+22 (Anemo 8)|X:-1597.34-Y:1473.2-Z:263.75
+23 (Anemo 9)|X:-1570.84-Y:1373.63-Z:253.96
+24 (Anemo 10)|X:-1454.18-Y:1214.37-Z:264.73
+25 (Anemo 11)|X:-1691.93-Y:1332.67-Z:280.28
+26 (Anemo 12)|X:-1922.01-Y:1489.08-Z:209.9
+28 (Adventurer's Guild)|X:-915.56-Y:2233.04-Z:213.17
+29 (Statue for Anemo)|X:-1265.09-Y:1931.3-Z:197.21

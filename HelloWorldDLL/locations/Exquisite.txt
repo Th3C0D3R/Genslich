@@ -1,0 +1,359 @@
+Exquisite 0001|X:-1846.05-Y:2880.36-Z:271.65
+Exquisite 0002|X:-1826.64-Y:2918.48-Z:243.86
+Exquisite 0003|X:-1655.68-Y:2907.28-Z:260.63
+Exquisite 0004|X:-1443.61-Y:2877.04-Z:261.47
+Exquisite 0005|X:-1440.53-Y:2826.27-Z:273.06
+Exquisite 0006|X:-1565.69-Y:2820.96-Z:306.18
+Exquisite 0007|X:-1574.33-Y:2729.17-Z:287.34
+Exquisite 0008|X:-1567.18-Y:2648.28-Z:269.43
+Exquisite 0009|X:-1398.9-Y:2710.16-Z:286.36
+Exquisite 0010|X:-1300.79-Y:2686.64-Z:246.1
+Exquisite 0011|X:-1211.38-Y:2656.62-Z:247.8
+Exquisite 0012 Fire puzzle|X:-1210.75-Y:2726.29-Z:261.16
+Exquisite 0013|X:-1156.38-Y:2709.28-Z:245.64
+Exquisite 0014|X:-1579.74-Y:2240.08-Z:244.92
+Exquisite 0015|X:-1736.45-Y:2191.86-Z:261.6
+Exquisite 0016-18 (3 chests in this area)|X:-1768.62-Y:2335.86-Z:302.16
+Exquisite 0019|X:-1567.52-Y:2446.87-Z:291.11
+Exquisite 0020|X:-1658.04-Y:2550.82-Z:323.83
+Exquisite 0021|X:-1508.73-Y:2465.59-Z:265.91
+Exquisite 0022 Fire puzzle|X:-1334.06-Y:2341.06-Z:253.6
+Exquisite 0023|X:-1284.63-Y:2408.83-Z:209.57
+Exquisite 0024|X:-1688.79-Y:2634.31-Z:255.27
+Exquisite 0025|X:-1485.29-Y:2206.36-Z:214.83
+Exquisite 0026|X:-1186.63-Y:2217.48-Z:225.12
+Exquisite 0027 Fire puzzle|X:-1567.96-Y:2001.57-Z:222.41
+Exquisite 0028|X:-1530.87-Y:2089.26-Z:233.65
+Exquisite 0029|X:-1363.71-Y:2000.72-Z:206.36
+Exquisite 0030|X:-1276.25-Y:2070.35-Z:210.25
+Exquisite 0031|X:-1169.36-Y:1960.24-Z:197.86
+Exquisite 0032 Fire puzzle|X:-1559.62-Y:1937.89-Z:208.01
+Exquisite 0033|X:-1556.95-Y:1873.24-Z:197.96
+Exquisite 0034|X:-1492.66-Y:1837.5-Z:194.92
+Exquisite 0035|X:-1412.25-Y:1812.22-Z:196.08
+Exquisite 0036|X:-1012.29-Y:2035.23-Z:211.68
+Exquisite 0037|X:-1024.55-Y:1786.86-Z:262.13
+Exquisite 0038|X:-1155.47-Y:1751.85-Z:253.03
+Exquisite 0039|X:-1159.22-Y:1725.17-Z:238.16
+Exquisite 0040 Electro puzzle|X:-1337.04-Y:1711.22-Z:266.68
+Exquisite 0041|X:-1268.57-Y:1802.39-Z:204.33
+Exquisite 0042|X:-1968.61-Y:1418.68-Z:319.11
+Exquisite 0043|X:-1788.04-Y:1326.06-Z:283.45
+Exquisite 0044|X:-1562.63-Y:1457.76-Z:269.51
+Exquisite 0045 Cryo puzzle many chests|X:-1634.71-Y:1580.53-Z:253.34
+Exquisite 0046|X:-1291.35-Y:1530.92-Z:288.47
+Exquisite 0047|X:-1169.69-Y:1555.4-Z:293.12
+Exquisite 0048|X:-1025.08-Y:1786.62-Z:262.11
+Exquisite 0049|X:-796.56-Y:1887.58-Z:238.62
+Exquisite 0050|X:-739.59-Y:1703.98-Z:257.08
+Exquisite 0051|X:-712.44-Y:1670.51-Z:260.22
+Exquisite 0052|X:-755.48-Y:1633.79-Z:267.51
+Exquisite 0053-55 theres 3 around this area|X:-522.17-Y:1870.87-Z:248.02
+Exquisite 0056|X:-559.36-Y:1935.96-Z:225.7
+Exquisite 0057|X:-598.01-Y:2086.56-Z:235.96
+Exquisite 0058|X:-447.71-Y:2054.68-Z:255.05
+Exquisite 0059 Fire puzzle|X:-367.47-Y:2048.58-Z:265.63
+Exquisite 0060|X:-471.53-Y:2149.3-Z:211.98
+Exquisite 0061|X:-445.54-Y:2179.47-Z:236.98
+Exquisite 0062|X:-475.52-Y:2281.12-Z:241.05
+Exquisite 0063 Fire puzzle|X:-468.6-Y:2222.31-Z:214.73
+Exquisite 0064 break puzzle|X:-419.48-Y:2197.52-Z:246.53
+Exquisite 0065|X:-475.31-Y:2282.33-Z:241.31
+Exquisite 0066-67 Anemo puzzle|X:-273.72-Y:2258.17-Z:271.11
+Exquisite 0068|X:-232.48-Y:2346.77-Z:290.89
+Exquisite 0069|X:-278.48-Y:2354.76-Z:285.52
+Exquisite 0070|X:-186.31-Y:2335.38-Z:298.73
+Exquisite 0071 kill monsters here to spawn chest|X:-354.5-Y:2526.5-Z:317.92
+Exquisite 0072|X:-401.73-Y:2421.45-Z:241.9
+Exquisite 0073|X:-482.05-Y:2643-Z:223.41
+Exquisite 0074|X:-403.08-Y:2674.95-Z:286.16
+Exquisite 0075 break|X:-364.34-Y:2690.04-Z:253.1
+Exquisite 0076|X:-427.3-Y:2697.91-Z:248.29
+Exquisite 0077|X:457.25-Y:-453.41-Z:210.99
+Exquisite 0078|X:449.8-Y:-467.59-Z:225.19
+Exquisite 0079|X:470.36-Y:-578.7-Z:265.08
+Exquisite 0080|X:420.65-Y:-539.14-Z:256.44
+Exquisite 0081|X:376.87-Y:-577.49-Z:250.66
+Exquisite 0082|X:364.87-Y:-630.6-Z:248.03
+Exquisite 0083|X:615.82-Y:-800.84-Z:316.89
+Exquisite 0084|X:690.48-Y:-637.09-Z:222.35
+Exquisite 0085|X:789.46-Y:-485.94-Z:226.28
+Exquisite 0086|X:649.85-Y:-426.45-Z:286.69
+Exquisite 0087|X:580.12-Y:-427.95-Z:338.66
+Exquisite 0088|X:595.29-Y:-466.26-Z:420.07
+Exquisite 0089 Geo Puzzle|X:601.46-Y:-455.4-Z:420.72
+Exquisite 0090|X:546.06-Y:-623.42-Z:365.1
+Exquisite 0091 Pressure plate + puzzle in water area|X:595.31-Y:-656.38-Z:309.29
+Exquisite 0093|X:607-Y:-552.92-Z:355.71
+Exquisite 0094|X:553.05-Y:-535.01-Z:334.64
+Exquisite 0095|X:749.51-Y:-787.42-Z:203.77
+Exquisite 0096|X:921.22-Y:-821.42-Z:185.22
+Exquisite 0097|X:1013.49-Y:-901.35-Z:180.83
+Exquisite 0098 Pressure plate|X:921.98-Y:-983.29-Z:234.93
+Exquisite 0099|X:1021.5-Y:-1010.78-Z:242.49
+Exquisite 0100|X:1068.4-Y:-823.27-Z:173.37
+Exquisite 0101|X:1279.88-Y:-890.86-Z:182.88
+Exquisite 0102|X:1308.28-Y:-900.65-Z:186.43
+Exquisite 0103 Torches|X:1351.64-Y:-869.75-Z:161.14
+Exquisite 0104|X:1376.26-Y:-836.52-Z:159.77
+Exquisite 0105|X:1311.85-Y:-702.04-Z:217.76
+Exquisite 0106|X:1062.95-Y:-462.77-Z:194.98
+Exquisite 0107|X:1031.61-Y:-470.84-Z:226.31
+Exquisite 0108|X:890.38-Y:-539.72-Z:194.37
+Exquisite 0109 Torches|X:872.77-Y:-431.56-Z:207.12
+Exquisite 0110 Torch|X:895.61-Y:-480.02-Z:181.66
+Exquisite 0111|X:788.86-Y:-485.5-Z:226.44
+Exquisite 0112|X:957.74-Y:-628.57-Z:227.14
+Exquisite 0113|X:922.91-Y:-225.97-Z:187.26
+Exquisite 0114|X:992.29-Y:-199.17-Z:182.43
+Exquisite 0115|X:915.54-Y:-119.17-Z:184.53
+Exquisite 0116|X:872.95-Y:-173.1-Z:197.84
+Exquisite 0117|X:748.67-Y:-310.68-Z:249.69
+Exquisite 0118-Chest|X:692.44-Y:21.07-Z:236.79
+Exquisite 0118-Rock|X:679.35-Y:-26.71-Z:242.76
+Exquisite 0119|X:769.46-Y:31.81-Z:225.21
+Exquisite 0120|X:906.45-Y:1.68-Z:299.44
+Exquisite 0121|X:1184.66-Y:-291.24-Z:231.22
+Exquisite 0122|X:1190.65-Y:-344.76-Z:229.02
+Exquisite 0123|X:1247.54-Y:-198.57-Z:241.74
+Exquisite 0124|X:1263.91-Y:58.06-Z:192.31
+Exquisite 0125|X:1122.22-Y:125.92-Z:221.38
+Exquisite 0126|X:1082.91-Y:142.71-Z:226.47
+Exquisite 0127|X:1420.46-Y:191.99-Z:201.03
+Exquisite 0128|X:1422.96-Y:153.04-Z:221.34
+Exquisite 0129|X:1445.96-Y:158.24-Z:228.45
+Exquisite 0130 Kill 3  floating slimes|X:1390.77-Y:202.64-Z:220.98
+Exquisite 0131|X:1483.07-Y:296.73-Z:187.82
+Exquisite 0132|X:1555.26-Y:344.09-Z:214.81
+Exquisite 0133|X:1533.98-Y:383.68-Z:293.68
+Exquisite 0134|X:1708.25-Y:332.63-Z:238.37
+Exquisite 0135|X:1742.2-Y:404.31-Z:235.14
+Exquisite 0136|X:1633.78-Y:492.25-Z:300.97
+Exquisite 0137|X:1509.66-Y:520.21-Z:289.97
+Exquisite 0138|X:1441.32-Y:446.4-Z:339.19
+Exquisite 0139|X:1251.97-Y:363.27-Z:295.17
+Exquisite 0140|X:1103.51-Y:345.95-Z:261.49
+Exquisite 0141|X:1169.61-Y:295.43-Z:256.8
+Exquisite 0142|X:1097-Y:437.98-Z:248.19
+Exquisite 0143|X:1154.11-Y:489.93-Z:239.36
+Exquisite 0144|X:1059.91-Y:577.84-Z:267.55
+Exquisite 0145|X:944.44-Y:480.78-Z:224.5
+Exquisite 0146|X:930.47-Y:391.73-Z:204.52
+Exquisite 0147|X:887.49-Y:315.06-Z:212.59
+Exquisite 0148|X:803.66-Y:315.21-Z:224.3
+Exquisite 0149|X:929.26-Y:391.22-Z:204.39
+Exquisite 0150|X:974.98-Y:230.45-Z:239.49
+Exquisite 0151 Torch|X:1016.92-Y:137.22-Z:246.04
+Exquisite 0153|X:757.59-Y:410.07-Z:238.66
+Exquisite 0154|X:631.47-Y:379.94-Z:208.48
+Exquisite 0155|X:555.8-Y:396.04-Z:202.71
+Exquisite 0156|X:489.6-Y:256.94-Z:235.51
+Exquisite 0157|X:309.81-Y:468.51-Z:204.74
+Exquisite 0158|X:235.55-Y:586.07-Z:198.99
+Exquisite 0159|X:462.63-Y:487.32-Z:216.35
+Exquisite 0160|X:204.08-Y:511.22-Z:196.66
+Exquisite 0161|X:64.78-Y:557.95-Z:201.4
+Exquisite 0162|X:52.05-Y:529.45-Z:200.86
+Exquisite 0163|X:139.28-Y:460.71-Z:209.68
+Exquisite 0164 Torches|X:179.09-Y:306.13-Z:219.78
+Exquisite 0165|X:218.73-Y:279.57-Z:221
+Exquisite 0166.2 - Geo puzzle missing rock|X:-12.58-Y:221.46-Z:202.37
+Exquisite 0166|X:40.22-Y:211.01-Z:211.32
+Exquisite 0167 Geo|X:66.25-Y:47.2-Z:272.28
+Exquisite 0168 Torch|X:114.48-Y:-112.64-Z:282.41
+Exquisite 0169|X:145.7-Y:-122.93-Z:293.55
+Exquisite 0170 Pressure plate|X:238.79-Y:-71.3-Z:279.35
+Exquisite 0171 Torch|X:57.75-Y:-196.14-Z:280.87
+Exquisite 0172 Pressure plate|X:-100.49-Y:-147.37-Z:251.77
+Exquisite 0173|X:-221.14-Y:-133.81-Z:202.01
+Exquisite 0174 Torch|X:-108.01-Y:390.01-Z:208.6
+Exquisite 0175|X:-71.02-Y:409.09-Z:202.09
+Exquisite 0176|X:-44.59-Y:481.15-Z:201.58
+Exquisite 0177|X:-192.18-Y:484.06-Z:203.08
+Exquisite 0178|X:-352.63-Y:380.02-Z:201.9
+Exquisite 0179|X:-326.65-Y:472.03-Z:202.71
+Exquisite 0180 Pressure plate|X:-164.94-Y:423.86-Z:200.68
+Exquisite 0181 Torch|X:-461.12-Y:572.84-Z:201.36
+Exquisite 0182|X:-625.36-Y:549.95-Z:203.77
+Exquisite 0183|X:-486.91-Y:631.83-Z:223.13
+Exquisite 0184|X:-463.23-Y:703.65-Z:267.56
+Exquisite 0185|X:-334.28-Y:832.44-Z:261.15
+Exquisite 0186|X:-224.51-Y:788.7-Z:240.54
+Exquisite 0187|X:-354.91-Y:672.01-Z:280.14
+Exquisite 0188 Geo-Electro|X:-376.09-Y:627.19-Z:260.62
+Exquisite 0190|X:-264.49-Y:628.84-Z:331.18
+Exquisite 0191|X:-227.96-Y:686.45-Z:225.43
+Exquisite 0192|X:-196.53-Y:869.85-Z:273.5
+Exquisite 0193|X:-124.81-Y:888.04-Z:245.9
+Exquisite 0194|X:-130.73-Y:919.49-Z:246.56
+Exquisite 0195|X:-165.36-Y:986.11-Z:257.09
+Exquisite 0196|X:-56.11-Y:849.53-Z:211.68
+Exquisite 0197|X:-8.33-Y:979.86-Z:214.74
+Exquisite 0198 Pressure plate|X:32.06-Y:978.82-Z:210.85
+Exquisite 0199|X:-28.85-Y:1071.15-Z:209.55
+Exquisite 0200|X:-70.68-Y:1066.66-Z:209.22
+Exquisite 0201|X:74.17-Y:1096.02-Z:207.85
+Exquisite 0202 Mine|X:-683.23-Y:149.04-Z:201.31
+Exquisite 0203|X:-787.9-Y:-91.32-Z:201.64
+Exquisite 0204|X:-904.93-Y:-81.96-Z:202.29
+Exquisite 0205|X:-922.71-Y:-158.41-Z:201.6
+Exquisite 0206|X:-998.19-Y:-106.93-Z:204.2
+Exquisite 0207|X:-890.76-Y:-241.56-Z:202.13
+Exquisite 0208 Torch, 3 guards behind|X:-691.85-Y:-390.63-Z:203.68
+Exquisite 0209 - Unsure if actually chest spawn|X:-586.65-Y:-368.75-Z:201.15
+Exquisite 0210|X:-1152.26-Y:-380.45-Z:216.37
+Exquisite 0211|X:-162.19-Y:-631.81-Z:219.71
+Exquisite 0212|X:-208.18-Y:1234.23-Z:201.29
+Exquisite 0213 Geo|X:280.68-Y:1355.25-Z:202.05
+Exquisite 0214|X:334.84-Y:1302.57-Z:202.15
+Exquisite 0215 Pressure plate|X:201.61-Y:1378.81-Z:200.9
+Exquisite 0215-2 Pressure plate|X:209.08-Y:1393.73-Z:201.02
+Exquisite 0216 Torch|X:262.41-Y:1189.21-Z:200.71
+Exquisite 0217|X:298.44-Y:1116.08-Z:202.53
+Exquisite 0218 Geo|X:370.33-Y:1162.84-Z:201.55
+Exquisite 0219 Pressure plate|X:454.59-Y:1102.43-Z:199.83
+Exquisite 0220 Torch|X:531.34-Y:1182.72-Z:203.31
+Exquisite 0221|X:543.46-Y:1167.88-Z:186.06
+Exquisite 0222 Pressure plate|X:373.03-Y:1040.78-Z:207.3
+Exquisite 0223|X:1018.88-Y:1638.71-Z:203.41
+Exquisite 0224|X:1139.15-Y:1591.26-Z:202.97
+Exquisite 0225 Air Slimes|X:1276.06-Y:1462.21-Z:242.6
+Exquisite 0226|X:1262.3-Y:1336.61-Z:228.37
+Exquisite 0227|X:905.92-Y:1344.79-Z:201.15
+Exquisite 0228|X:954.04-Y:1268.96-Z:203.66
+Exquisite 0229|X:854.97-Y:1209.87-Z:201.99
+Exquisite 0230 Water|X:956.56-Y:1123.83-Z:208.93
+Exquisite 0231|X:1085.43-Y:1193.67-Z:254.34
+Exquisite 0232 Mine|X:1276.02-Y:1250.91-Z:267.98
+Exquisite 0233|X:713.07-Y:1079.08-Z:201.31
+Exquisite 0234 Air Slimes|X:777.31-Y:941.8-Z:249.24
+Exquisite 0235-1 Geo|X:672.88-Y:952.9-Z:212.36
+Exquisite 0235-2 Geo (chest)|X:669.31-Y:944.5-Z:212.47
+Exquisite 0235-2 Geo|X:669.31-Y:944.5-Z:212.47
+Exquisite 0236 Torch|X:566.08-Y:905.82-Z:203.75
+Exquisite 0237|X:657.44-Y:838.31-Z:213.31
+Exquisite 0238|X:584.15-Y:766.78-Z:202.7
+Exquisite 0239 GeoLantern Puzzle|X:941.56-Y:763.19-Z:268.15
+Exquisite 0240 Geo Puzzle|X:888.93-Y:683.99-Z:207.57
+Exquisite 0241|X:793.67-Y:532.17-Z:200.52
+Exquisite 0242 Torch|X:912.14-Y:534.05-Z:243.68
+Exquisite 0243|X:944.68-Y:481.27-Z:224.51
+Exquisite 0244|X:1095.39-Y:438.51-Z:247.85
+Exquisite 0245|X:1187.98-Y:449.42-Z:268.71
+Exquisite 0246|X:1058.67-Y:576.7-Z:267.03
+Exquisite 0247 GeoLantern Puzzle|X:1257.17-Y:749.91-Z:178.39
+Exquisite 0248 GeoLantern Puzzle|X:1301.66-Y:643.13-Z:208.18
+Exquisite 0248- (rock) GeoLantern Puzzle|X:1295.38-Y:644.09-Z:196.13
+Exquisite 0249|X:1082.87-Y:706.34-Z:186.57
+Exquisite 0250|X:1060.63-Y:800.63-Z:264.89
+Exquisite 0251 Anemo Puzzle|X:1773.4-Y:815.34-Z:232.52
+Exquisite 0252 Geo Puzzle|X:1654.44-Y:848.59-Z:246.15
+Exquisite 0253 Pressure plate (chest)|X:1576.33-Y:771.62-Z:319.39
+Exquisite 0253 Pressure plate|X:1643.15-Y:783.65-Z:333.96
+Exquisite 0254|X:1650.58-Y:620.82-Z:233.86
+Exquisite 0255|X:1764.12-Y:701.38-Z:320.16
+Exquisite 0256 GeoLantern Puzzle|X:1769.04-Y:634.79-Z:232.02
+Exquisite 0257|X:1873.84-Y:755.98-Z:371.28
+Exquisite 0258|X:1854.25-Y:592.73-Z:362.37
+Exquisite 0259 Electro Puzzle|X:1890.46-Y:695.96-Z:411.25
+Exquisite 0260 Mine|X:1464-Y:754.98-Z:325.29
+Exquisite 0261-unsure|X:1374.52-Y:607.85-Z:302.32
+Exquisite 0262 GeoLantern Puzzle|X:1455.46-Y:617.8-Z:265.86
+Exquisite 0263 GeoLantern Puzzle|X:1560.3-Y:869.43-Z:341.16
+Exquisite 0264 GeoLantern Puzzle|X:1518.63-Y:863.6-Z:324.47
+Exquisite 0265 Torch|X:1473.41-Y:896.24-Z:362.91
+Exquisite 0266|X:1220.88-Y:831.41-Z:217.21
+Exquisite 0267 Ice Puzzle|X:1311.28-Y:783.28-Z:228.86
+Exquisite 0268|X:1313.51-Y:1051.92-Z:310.2
+Exquisite 0269|X:1371.78-Y:1120.43-Z:284.97
+Exquisite 0270|X:1383.63-Y:999.63-Z:270.58
+Exquisite 0271 GeoLantern Puzzle (rock)|X:1546.19-Y:1012.21-Z:273.96
+Exquisite 0271 GeoLantern Puzzle|X:1518.54-Y:1025.19-Z:270.26
+Exquisite 0272 Torch|X:1575.59-Y:1015.98-Z:338.38
+Exquisite 0273 Pressure plate|X:1542.48-Y:992.2-Z:268.25
+Exquisite 0274|X:1540-Y:955.19-Z:273.48
+Exquisite 0275|X:1612.28-Y:920.36-Z:260.96
+Exquisite 0276|X:1264.89-Y:927.05-Z:262.45
+Exquisite 0277 GeoLantern Puzzle (rock on wall)|X:1235.64-Y:932.73-Z:256.54
+Exquisite 0277|X:-400.3-Y:2418.12-Z:241.91
+Exquisite 0278|X:-160.35-Y:2766.71-Z:230.3
+Exquisite 0279|X:-98.76-Y:2872.62-Z:219.73
+Exquisite 0280|X:-55.78-Y:2888.79-Z:210.45
+Exquisite 0281|X:58.21-Y:2994.36-Z:212.14
+Exquisite 0282|X:292.31-Y:2940.62-Z:217.03
+Exquisite 0283|X:284.82-Y:2667.43-Z:213.04
+Exquisite 0284|X:229.04-Y:2745.12-Z:219.93
+Exquisite 0285|X:315.92-Y:2730.01-Z:241.42
+Exquisite 0286|X:343.77-Y:2716.79-Z:208.15
+Exquisite 0287|X:379.73-Y:2671.74-Z:213.31
+Exquisite 0288|X:357.58-Y:2625.32-Z:207.86
+Exquisite 0289|X:455.43-Y:2586.8-Z:211.75
+Exquisite 0290|X:364.84-Y:2499.64-Z:211.31
+Exquisite 0291|X:364.21-Y:2448.14-Z:264.25
+Exquisite 0292|X:383.79-Y:2382.91-Z:223.58
+Exquisite 0293|X:210.97-Y:2444.34-Z:221.07
+Exquisite 0294|X:207.63-Y:2548.15-Z:206.48
+Exquisite 0295|X:249.91-Y:2549.23-Z:208.04
+Exquisite 0296|X:147.14-Y:2648.23-Z:265.62
+Exquisite 0297|X:132.76-Y:2666.95-Z:301.66
+Exquisite 0298|X:152.72-Y:2603.16-Z:230.66
+Exquisite 0299|X:85.46-Y:2700.32-Z:227.56
+Exquisite 0300|X:-6.08-Y:2635.21-Z:207.98
+Exquisite 0301|X:-60.58-Y:2476.41-Z:218.98
+Exquisite 0302 chest just ahead, need to beat stormterror|X:380.19-Y:2370.62-Z:271.68
+Exquisite 0303|X:717.12-Y:1849.28-Z:207.17
+Exquisite 0304|X:637.43-Y:1936.6-Z:227.15
+Exquisite 0305|X:589.45-Y:1964.96-Z:239
+Exquisite 0306|X:882.65-Y:1929.69-Z:218.61
+Exquisite 0307|X:512.36-Y:1741.65-Z:257.39
+Exquisite 0308 geo|X:615.2-Y:1797.38-Z:211.98
+Exquisite 0309 break|X:680.96-Y:1776.47-Z:223.74
+Exquisite 0310|X:720.09-Y:1786.63-Z:217.38
+Exquisite 0311|X:859.98-Y:1581.18-Z:201.16
+Exquisite 0312|X:762.11-Y:1555.27-Z:232.17
+Exquisite 0313 mine here|X:724.79-Y:1560.16-Z:231.88
+Exquisite 0314|X:318.96-Y:1615.81-Z:202.2
+Exquisite 0315|X:379.15-Y:1634.1-Z:299.05
+Exquisite 0316|X:431.75-Y:1685.6-Z:302.56
+Exquisite 0317|X:519.99-Y:1476.85-Z:220.08
+Exquisite 0318|X:468.76-Y:1413.03-Z:215
+Exquisite 0319|X:516.31-Y:1527.43-Z:233.62
+Exquisite 0320 mine here|X:587.37-Y:1517.01-Z:223.8
+Exquisite 0321 mine here|X:545.83-Y:1489.86-Z:223.04
+Exquisite 0322 torches puzzle|X:532.95-Y:1475.8-Z:219.73
+Exquisite 0323|X:453.89-Y:1481.42-Z:226.85
+Exquisite 0324|X:509.6-Y:1355.11-Z:209.28
+Exquisite 0325 pinwheel|X:511.49-Y:1348.16-Z:224.21
+Exquisite 0326|X:631.02-Y:1391.77-Z:210.43
+Exquisite 0327|X:718.53-Y:1363.82-Z:201.04
+Exquisite 0328|X:753.68-Y:1399.9-Z:201.56
+Exquisite 0329|X:567.86-Y:1600.39-Z:293.47
+Exquisite 0330|X:671.52-Y:1642.63-Z:212.15
+Exquisite 0331|X:352.12-Y:1479.47-Z:203.84
+Exquisite 0332|X:13.7-Y:1585.39-Z:250.97
+Exquisite 0333|X:185.01-Y:1586.92-Z:301.6
+Exquisite 0334-7 4 chests around this mountain|X:185.01-Y:1586.92-Z:301.6
+Exquisite 0338|X:170.53-Y:1501.97-Z:206.16
+Exquisite 0339 geo|X:200.04-Y:1377.44-Z:200.77
+Exquisite 0340 geo|X:281.59-Y:1356.71-Z:201.94
+Exquisite 0341|X:334.87-Y:1305.42-Z:202.43
+Exquisite 0342 popping|X:336.49-Y:1307.29-Z:208.32
+Exquisite 0343|X:532.3-Y:1182.84-Z:203.21
+Exquisite 0344|X:429.28-Y:1301.05-Z:201.11
+Exquisite 0345|X:12.82-Y:1585.05-Z:251.05
+Exquisite 0346 break|X:-9.59-Y:1571.9-Z:260.38
+Exquisite 0347|X:-46.81-Y:1542.77-Z:263.25
+Exquisite 0348|X:-69.88-Y:1594.2-Z:249.7
+Exquisite 0349 Fire puzzle|X:-48.95-Y:1608.96-Z:271.63
+Exquisite 0350|X:12.8-Y:1585.95-Z:251.8
+Exquisite 0351 break|X:-24.07-Y:1600.15-Z:252.96
+Exquisite 0352|X:-4.6-Y:1682.32-Z:278.26
+Exquisite 0353|X:-49.39-Y:1735.11-Z:276.08
+Exquisite 0354 break|X:-88.34-Y:1689.3-Z:259.32
+Exquisite 0355-156 chests + bonus chest|X:-106.68-Y:1485.57-Z:230.1
+Exquisite 0357 Fire puzzle|X:44.74-Y:1515.69-Z:238.89
+Exquisite 0359|X:-246.77-Y:1499.01-Z:248.55
+Exquisite 0360|X:-190.62-Y:1500.59-Z:248.89
+Exquisite|X:971.15-Y:-270.58-Z:191.11
+Flower Lamps|X:-317.59-Y:2306.95-Z:270.59
+special chest|X:169.57-Y:1364.54-Z:202.02
