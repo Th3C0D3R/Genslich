@@ -10,7 +10,7 @@ namespace mem_utils
 	inline HANDLE process_handle;
 	inline uint64_t base_address;
 
-	bool init();
+	bool init(bool print);
 
 	template<class T>
 	__forceinline T read(uint64_t address)

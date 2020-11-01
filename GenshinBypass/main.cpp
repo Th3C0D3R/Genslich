@@ -25,10 +25,14 @@ int main(int argc, char** argv)
     }
     
     int counter = 0;
-    while (!mem_utils::init())
+    bool print = true;
+    while (!mem_utils::init(print))
     {
-        if(counter % 4 == 0)
-            printf("[!] failed to initialize memory utility\nIs the Game running?\nIs the Window_Title correct?");
+        print = false;
+        if (counter % 10 == 0) {
+            printf("\n[!] failed to initialize memory utility\nIs the Game running?\nIs the Window_Title correct?\n\nWaiting.");
+        }
+        printf(".");
         counter += 1;
         Sleep(1000);
     }
