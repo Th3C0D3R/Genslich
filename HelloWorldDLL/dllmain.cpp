@@ -11,7 +11,10 @@
 #include <iostream>
 #include <Windows.h>
 #include <thread>
+#include <vector>
 #include "vk_code.h"
+#include <fstream>
+
 
 enum {
 	HOTKEY_F4 = 4,
@@ -26,10 +29,12 @@ UINT_PTR unityPlayerBaseAddress = 0;
 UINT_PTR unityPlayerOffsetAddress = 0;
 UINT_PTR userAssemblyBaseAddress = 0;
 
+FILE* file;
+
 float SavedCoords[3] = { 0,0,0 };
 float OldCoords[3] = { 0,0,0 };
 bool FPS = false, ESP = false, IBC = false;
-//const char* lastLines[5];
+//char* lastLines[5];
 
 void clearConsole();
 void addInfoLine(char* newLine);
@@ -45,6 +50,7 @@ void MonsterHP();
 void ChestESP();
 void ChestESPDist();
 void InstantBowCharge();
+DWORD GetAddressFromSignature(std::vector<int> signature, DWORD startaddress, DWORD endaddress);
 void WriteMemory(UINT_PTR address, int value, int length);
 
 unsigned long main_thread(void*)
@@ -53,20 +59,27 @@ unsigned long main_thread(void*)
 	{
 		return 1;
 	}
-
+	fopen_s(&file, "genslich.log", "a+");
 	freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
 	freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-	SetConsoleTitle(TEXT("YOUR_NAME_HERE | "));
 	HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
 	HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
 	unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
 	unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
 	userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
+	DWORD result = (*(DWORD*)GetAddressFromSignature({ 0x75, 0x69, 0x64, 0x3D},0,0));
+	printf("[+] UID: 0x%llx\n", result);
+	char line[40] = "";
+	snprintf(line, sizeof line, "TH3C0D3R(SiedlerLP) | 0x%llx\n", result);
+	SetConsoleTitle(line);
 	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
 	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
 	printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
 	bool Continue = true;
 	bool block = false;
+
+	fprintf_s(file, "Registering Hotkeys....\n");
+	fflush(file);
 
 	RegisterHotKey(NULL, HOTKEY_F4, MOD_NOREPEAT, VK_F4);
 	RegisterHotKey(NULL, HOTKEY_F5, MOD_NOREPEAT, VK_F5);
@@ -106,6 +119,7 @@ unsigned long main_thread(void*)
 				break;
 			case HOTKEY_F9:
 				FreeConsole();
+				fclose(file);
 				break;
 			default:
 				break;
@@ -126,6 +140,38 @@ void WriteMemory(UINT_PTR address, int value, int length) {
 	}
 	return;
 }
+
+DWORD GetAddressFromSignature(std::vector<int> signature, DWORD startaddress, DWORD endaddress) {
+	SYSTEM_INFO si;
+	GetSystemInfo(&si);
+	if (startaddress == 0)
+		startaddress = (DWORD)(si.lpMinimumApplicationAddress);
+	if (endaddress == 0)
+		endaddress = (DWORD)(si.lpMaximumApplicationAddress);
+
+	MEMORY_BASIC_INFORMATION mbi{ 0 };
+	DWORD protectflags = (PAGE_GUARD | PAGE_NOCACHE | PAGE_NOACCESS);
+	for (DWORD i = startaddress; i < endaddress - signature.size(); i++) {
+		if (VirtualQuery((LPCVOID)i, &mbi, sizeof(mbi))) {
+			if (mbi.Protect & protectflags || !(mbi.State & MEM_COMMIT)) {
+				i += mbi.RegionSize;
+				continue;
+			}
+			//std::cout << "Good Region! Region Base Address: " << mbi.BaseAddress << " | Region end address: " << std::hex << (int)((DWORD)mbi.BaseAddress + mbi.RegionSize) << std::endl;
+			for (DWORD k = (DWORD)mbi.BaseAddress; k < (DWORD)mbi.BaseAddress + mbi.RegionSize - signature.size(); k++) {
+				for (DWORD j = 0; j < signature.size(); j++) {
+					if (signature.at(j) != -1 && signature.at(j) != *(byte*)(k + j))
+						break;
+					if (j + 1 == signature.size())
+						return k;
+				}
+			}
+			i = (DWORD)mbi.BaseAddress + mbi.RegionSize;
+		}
+	}
+	return NULL;
+}
+
 void ESPHack() {
 	ESP = !ESP;
 	MonsterHP();
@@ -285,8 +331,8 @@ void PrintMenu() {
 		"#    F8    # Toggle InstantBowCharge  #\n"
 		"#    F9    #       Exit programm      #\n"
 		"#######################################\n"
-		"\n");/*
-	for (int i = 4; i >= 0; i--)
+		"\n");
+	/*for (int i = 4; i >= 0; i--)
 	{
 		printf(lastLines[i]);
 		printf("\n");
@@ -306,10 +352,9 @@ BOOL APIENTRY DllMain(HMODULE module_handle, DWORD call_reason, LPVOID reserved)
 {
 	if (call_reason == DLL_PROCESS_ATTACH)
 	{
+		//if (const auto handle = CreateThread(nullptr, 0, &CreateDotNetRunTime, nullptr, 0, nullptr); handle != nullptr)
 		if (const auto handle = CreateThread(nullptr, 0, &main_thread, nullptr, 0, nullptr); handle != nullptr)
-		{
 			CloseHandle(handle);
-		}
 		return TRUE;
 	}
 	return TRUE;

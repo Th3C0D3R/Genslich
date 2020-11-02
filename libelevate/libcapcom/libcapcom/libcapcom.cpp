@@ -2,7 +2,7 @@
 #include "loader.h"
 #include "capcomsys.h"
 #include "capcom_wrapper.h"
-
+#pragma warning(disable : 4996)
 using namespace capcom::wrapper;
 
 capcom_wrapper* wrapper = nullptr;
