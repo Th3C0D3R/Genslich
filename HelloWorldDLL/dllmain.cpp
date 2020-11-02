@@ -68,9 +68,10 @@ unsigned long main_thread(void*)
 	unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
 	userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
 	DWORD result = (*(DWORD*)GetAddressFromSignature({ 0x75, 0x69, 0x64, 0x3D},0,0));
-	printf("[+] UID: 0x%llx\n", result);
+	char* name = (char*)(result + 0x4);
+	printf("[+] UID: %s\n", name);
 	char line[40] = "";
-	snprintf(line, sizeof line, "TH3C0D3R(SiedlerLP) | 0x%llx\n", result);
+	snprintf(line, sizeof line, "TH3C0D3R(SiedlerLP) | %s\n", name);
 	SetConsoleTitle(line);
 	printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
 	printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
