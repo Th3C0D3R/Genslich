@@ -35,3 +35,5 @@
 GenshinBypass/x64/**
 HelloWorldDLL/x64/**
 x64/**
+Genslich/obj/**
+Genslich/bin/**
