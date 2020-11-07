@@ -30,13 +30,12 @@ namespace Genslich
             InitializeComponent();
             PathToPS1Script = SavePS1ScriptTmp();
             Settings.Default.Reload();
-            if (string.IsNullOrWhiteSpace(Settings.Default.GenshinFilePath))
-            {
-                ofdGenshinexe.ShowDialog();
-            }
-            else
+            if (!string.IsNullOrWhiteSpace(Settings.Default.GenshinFilePath))
             {
                 PathToExe = Settings.Default.GenshinFilePath;
+                txtPathToExe.Text = PathToExe;
+                btnStart.Enabled = true;
+                btnStart.Text = "START && INJECT";
             }
         }
 
@@ -63,9 +62,7 @@ namespace Genslich
         private void btnStart_Click(object sender, EventArgs e)
         {
             dynamic ProcessHandler = null;
-            dynamic ThreadHandler = null;
             dynamic ProcessID = null;
-            dynamic ThreadID = null;
             using (PowerShell PowerShellInst = PowerShell.Create())
             {
                 string path = PathToPS1Script;
@@ -78,15 +75,13 @@ namespace Genslich
                 Collection<PSObject> PSOutput = PowerShellInst.Invoke();
 
                 ProcessHandler = PSOutput[2].Properties["hProcess"];
-                ThreadHandler = PSOutput[2].Properties["hThread"];
                 ProcessID = PSOutput[2].Properties["dwProcessID"];
-                ThreadID = PSOutput[2].Properties["dwThreadID"];
 
             }
 
             if (ProcessHandler != null)
             {
-                DllInjectionResult result = D11_1NJ3CT0R.D11_1NJ3CT3("GenshinImpact.exe", "Resources\\HelloWorldDLL.dll");
+                DllInjectionResult result = D11_1NJ3CT0R.D11_1NJ3CT3("GenshinImpact", "Resources\\HelloWorldDLL.dll");
                 if (result == DllInjectionResult.Success)
                 {
                     Process p = Process.GetProcessById(ProcessID);
@@ -103,8 +98,21 @@ namespace Genslich
         private void ofdGenshinexe_FileOk(object sender, CancelEventArgs e)
         {
             PathToExe = ofdGenshinexe.FileName;
+            txtPathToExe.Text = PathToExe;
+            btnStart.Enabled = true;
+            btnStart.Text = "START && INJECT";
             Settings.Default.GenshinFilePath = PathToExe;
             Settings.Default.Save();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ofdGenshinexe.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("If you need help, just ask someone on Discord!\n\nIf you are not on the Discord Server already, just send TH3C0D3R#4338 a PM with your orderID", "NEEd HELP???");
         }
     }
 }
