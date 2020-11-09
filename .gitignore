@@ -38,3 +38,10 @@ HelloWorldDLL/Release/**
 x64/**
 Genslich/obj/**
 Genslich/bin/**
+GenslichCore/obj/**
+GenslichCore/bin/**
+Lunar/.vs/**
+Lunar/Lunar.Tests/**
+Lunar/.github/**
+Lunar/Lunar/bin/**
+Lunar/Lunar/obj/**

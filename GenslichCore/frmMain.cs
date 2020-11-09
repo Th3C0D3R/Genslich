@@ -1,24 +1,14 @@
 ﻿using Genslich.Extensions;
-using Genslich.Properties;
+using GenslichCore.Extensions;
+using GenslichCore.Properties;
+using Lunar;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Management.Automation;
-using System.Management.Automation.Runspaces;
 using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Lunar;
-using TH3_1NJ3CT0R;
 
 namespace Genslich
 {
@@ -62,38 +52,28 @@ namespace Genslich
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            dynamic ProcessHandler = null;
-            dynamic ProcessID = null;
-            using (PowerShell PowerShellInst = PowerShell.Create())
+            if (!string.IsNullOrEmpty(PathToExe))
             {
-                string path = PathToPS1Script;
-                if (!string.IsNullOrEmpty(path))
+                if (ProcessStart.StartProcess(PathToExe, ProcessCreationFlags.CREATE_SUSPENDED))
                 {
-                    string script = File.ReadAllText(path).Replace("###File###", PathToExe).Replace("###Path###", PathToExe.Replace("GenshinImpact.exe", ""));
-                    PowerShellInst.AddScript(script);
-                }
-
-                Collection<PSObject> PSOutput = PowerShellInst.Invoke();
-
-                ProcessHandler = PSOutput[2].Properties["hProcess"];
-                ProcessID = PSOutput[2].Properties["dwProcessID"];
-
-            }
-
-            if (ProcessHandler != null)
-            {
-                Process Genshin = Process.GetProcesses().ToList().Find((p) => p.ProcessName == "GenshinImpact");
-                LibraryMapper lm = new LibraryMapper(Genshin, "Resources\\HelloWorldDLL.dll", MappingFlags.DiscardHeaders);
-                DllInjectionResult result = D11_1NJ3CT0R.D11_1NJ3CT3("GenshinImpact", "Resources\\HelloWorldDLL.dll");
-                if (result == DllInjectionResult.Success)
-                {
-                    Process p = Process.GetProcessById(ProcessID);
-                    if (p.Id == ProcessID)
-                        ProcessExtensions.Resume(p);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR INJECTING: " + result.ToString());
+                    Process Genshin = Process.GetProcesses().ToList().Find((p) => p.ProcessName == "GenshinImpact");
+                    if (Genshin != null)
+                    {
+                        try
+                        {
+                            LibraryMapper lm = new LibraryMapper(Genshin, "Resources\\HelloWorldDLL.dll");
+                            lm.MapLibrary();
+                            ProcessExtensions.Resume(Genshin);
+                        }
+                        catch (ApplicationException ex)
+                        {
+                            MessageBox.Show("ERROR:\n" + ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR: FAILED TO GET GENSHIN PROCESS");
+                    }
                 }
             }
         }
