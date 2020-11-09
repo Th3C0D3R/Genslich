@@ -33,7 +33,8 @@ UINT_PTR unityPlayerBaseAddress = 0;
 UINT_PTR unityPlayerOffsetAddress = 0;
 UINT_PTR userAssemblyBaseAddress = 0;
 
-FILE* file;
+FILE* file = NULL;
+errno_t err;
 
 float SavedCoords[3] = { 0,0,0 };
 float OldCoords[3] = { 0,0,0 };
@@ -64,13 +65,13 @@ void WriteMemory(UINT_PTR address, int value, int length);
 void ReadMemory(UINT_PTR address, void* buffer, size_t size);
 MODULEINFO GetModuleInfo(char* szModule);
 
-unsigned long main_thread(void*)
+DWORD WINAPI main_thread(LPVOID lpParameter)
 {
 	if (!AllocConsole())
 	{
 		return 1;
 	}
-	fopen_s(&file, "genslich.log", "a+");
+	err = fopen_s(&file, "genslich.log", "a+");
 	freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
 	freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
 
@@ -78,7 +79,8 @@ unsigned long main_thread(void*)
 
 	printf("Please press Numpad1 as soon as you can move around!!!!!");
 
-	fprintf_s(file, "Registering Hotkeys....\n");
+	if (!err && file != NULL)
+		fprintf_s(file, "Registering Hotkeys....\n");
 	fflush(file);
 
 	RegisterHotKey(NULL, HOTKEY_N1, MOD_NOREPEAT, VK_NUMPAD1);
@@ -150,7 +152,8 @@ unsigned long main_thread(void*)
 				exitProgram = true;
 				Sleep(300);
 				FreeConsole();
-				fclose(file);
+				if (!err && file != NULL)
+					fclose(file);
 				break;
 			default:
 				break;
@@ -241,19 +244,19 @@ void ESPHack() {
 }
 void MonsterLevel() {
 	WriteMemory(userAssemblyBaseAddress + 0x125AD3E, ESP ? 0x84 : 0x87, 1); //0x8
-	printf("MonsterLevel Address: 0x%llx\n", userAssemblyBaseAddress + 0x125AD3E);
+	printf("MonsterLevel Address: 0x%ux\n", userAssemblyBaseAddress + 0x125AD3E);
 }
 void MonsterHP() {
 	WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
-	printf("MonsterHP Address: 0x%llx\n", userAssemblyBaseAddress + 0x12597BB);
+	printf("MonsterHP Address: 0x%ux\n", userAssemblyBaseAddress + 0x12597BB);
 }
 void ChestESP() {
 	WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
-	printf("ChestESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F317);
+	printf("ChestESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F317);
 }
 void ChestESPDist() {
 	WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
-	printf("ChestDistESP Address: 0x%llx\n", userAssemblyBaseAddress + 0x1C6F39A);
+	printf("ChestDistESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F39A);
 }
 void InstantBowCharge() {
 	IBC = !IBC;
@@ -404,9 +407,9 @@ void PrintMenu() {
 		if (!drawNew) {}
 		else {
 			system("CLS");
-			printf("[+] unityPlayerBaseAddress: 0x%llx\n", unityPlayerBaseAddress);
-			printf("[+] unityPlayerOffsetAddress: 0x%llx\n", unityPlayerOffsetAddress);
-			printf("[+] userAssemblyBaseAddress: 0x%llx\n", userAssemblyBaseAddress);
+			printf("[+] unityPlayerBaseAddress: 0x%ux\n", unityPlayerBaseAddress);
+			printf("[+] unityPlayerOffsetAddress: 0x%ux\n", unityPlayerOffsetAddress);
+			printf("[+] userAssemblyBaseAddress: 0x%ux\n", userAssemblyBaseAddress);
 			printf("\n"
 				"#######################################\n"
 				"#  Hotkey  #          Function        #\n"

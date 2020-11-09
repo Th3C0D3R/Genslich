@@ -44,10 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Lunar\Lunar\Lunar.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="TitleBarControl">
       <HintPath>..\..\..\Downloads\EasyTitleBar\TitleBarControl\TitleBarControl\bin\Release\TitleBarControl.dll</HintPath>
     </Reference>

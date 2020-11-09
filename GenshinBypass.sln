@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorldDLL", "HelloWorldDLL\HelloWorldDLL.vcxproj", "{94C8B734-3123-4D8D-B1A2-2145B9B0485E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenslichCore", "GenslichCore\GenslichCore.csproj", "{FD65E840-5CC3-4DE3-B8C9-FA1335A08DFB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94C8B734-3123-4D8D-B1A2-2145B9B0485E} = {94C8B734-3123-4D8D-B1A2-2145B9B0485E}
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lunar", "..\Lunar\Lunar\Lunar.csproj", "{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lunar", "Lunar\Lunar\Lunar.csproj", "{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +29,7 @@ Global
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Debug|x86.ActiveCfg = Debug|Win32
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Debug|x86.Build.0 = Debug|Win32
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Release|Any CPU.ActiveCfg = Release|Win32
+		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Release|Any CPU.Build.0 = Release|Win32
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Release|x64.ActiveCfg = Release|x64
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Release|x64.Build.0 = Release|x64
 		{94C8B734-3123-4D8D-B1A2-2145B9B0485E}.Release|x86.ActiveCfg = Release|Win32
@@ -43,13 +47,11 @@ Global
 		{FD65E840-5CC3-4DE3-B8C9-FA1335A08DFB}.Release|x86.ActiveCfg = Release|Any CPU
 		{FD65E840-5CC3-4DE3-B8C9-FA1335A08DFB}.Release|x86.Build.0 = Release|Any CPU
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|x64.ActiveCfg = Debug|x64
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|x64.Build.0 = Debug|x64
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Debug|x86.Build.0 = Debug|Any CPU
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Release|x64.ActiveCfg = Release|x64
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Release|x64.Build.0 = Release|x64
 		{8B92C5DF-CD67-46D2-A3FE-84E9FFFE4607}.Release|x86.ActiveCfg = Release|Any CPU

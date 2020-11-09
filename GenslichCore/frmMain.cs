@@ -1,13 +1,13 @@
 ﻿using Genslich.Extensions;
 using GenslichCore.Extensions;
 using GenslichCore.Properties;
-using Lunar;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Genslich
@@ -61,9 +61,9 @@ namespace Genslich
                     {
                         try
                         {
-                            LibraryMapper lm = new LibraryMapper(Genshin, "Resources\\HelloWorldDLL.dll");
-                            lm.MapLibrary();
-                            ProcessExtensions.Resume(Genshin);
+                            if (DLLInjection.Inject(Genshin, "Resources\\HelloWorldDLL.dll"))
+                                ProcessExtensions.Resume(Genshin);
+                            else throw new ApplicationException($"Code: {Marshal.GetLastWin32Error()}");
                         }
                         catch (ApplicationException ex)
                         {

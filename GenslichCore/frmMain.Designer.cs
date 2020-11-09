@@ -66,10 +66,10 @@
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Enabled = false;
-            this.btnStart.Location = new System.Drawing.Point(253, 332);
+            this.btnStart.Location = new System.Drawing.Point(221, 249);
             this.btnStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(199, 40);
+            this.btnStart.Size = new System.Drawing.Size(174, 30);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "SELECT PATH FIRST";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -85,20 +85,18 @@
             // 
             // txtPathToExe
             // 
-            this.txtPathToExe.Location = new System.Drawing.Point(12, 65);
-            this.txtPathToExe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPathToExe.Location = new System.Drawing.Point(10, 49);
             this.txtPathToExe.Name = "txtPathToExe";
             this.txtPathToExe.ReadOnly = true;
-            this.txtPathToExe.Size = new System.Drawing.Size(353, 27);
+            this.txtPathToExe.Size = new System.Drawing.Size(309, 23);
             this.txtPathToExe.TabIndex = 2;
             this.txtPathToExe.Text = "PATH TO GENSHIN IMPACT EXE";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(371, 59);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(325, 44);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 41);
+            this.button1.Size = new System.Drawing.Size(37, 31);
             this.button1.TabIndex = 3;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
@@ -123,10 +121,9 @@
             listViewItem5,
             listViewItem6,
             listViewItem7});
-            this.listView1.Location = new System.Drawing.Point(12, 100);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listView1.Location = new System.Drawing.Point(10, 75);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(440, 225);
+            this.listView1.Size = new System.Drawing.Size(386, 170);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -143,10 +140,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 340);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(10, 255);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(23, 29);
+            this.button2.Size = new System.Drawing.Size(20, 22);
             this.button2.TabIndex = 5;
             this.button2.Text = "?";
             this.button2.UseVisualStyleBackColor = true;
@@ -157,9 +153,9 @@
             this.ftbcBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ftbcBar.BackgroundImage")));
             this.ftbcBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.ftbcBar.Location = new System.Drawing.Point(0, 0);
-            this.ftbcBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ftbcBar.Margin = new System.Windows.Forms.Padding(4);
             this.ftbcBar.Name = "ftbcBar";
-            this.ftbcBar.Size = new System.Drawing.Size(470, 35);
+            this.ftbcBar.Size = new System.Drawing.Size(411, 26);
             this.ftbcBar.TabIndex = 1;
             this.ftbcBar.Title = "Genslich Impact";
             this.ftbcBar.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -170,20 +166,20 @@
             // 
             this.formControlBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("formControlBox1.BackgroundImage")));
             this.formControlBox1.Close = true;
-            this.formControlBox1.Location = new System.Drawing.Point(381, 0);
-            this.formControlBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.formControlBox1.Location = new System.Drawing.Point(333, 0);
+            this.formControlBox1.Margin = new System.Windows.Forms.Padding(4);
             this.formControlBox1.Maximize = false;
             this.formControlBox1.Minimize = true;
             this.formControlBox1.Name = "formControlBox1";
-            this.formControlBox1.Size = new System.Drawing.Size(89, 31);
+            this.formControlBox1.Size = new System.Drawing.Size(78, 23);
             this.formControlBox1.TabIndex = 6;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(470, 386);
+            this.ClientSize = new System.Drawing.Size(411, 290);
             this.ControlBox = false;
             this.Controls.Add(this.formControlBox1);
             this.Controls.Add(this.button2);
