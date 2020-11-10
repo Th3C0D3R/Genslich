@@ -7,6 +7,12 @@
 #ifndef PCH_H
 #define PCH_H
 
+#define WIN32_LEAN_AND_MEAN
+#ifdef __cplusplus__
+#include <cstdlib>
+#else
+#include <stdlib.h>
+#endif
 // add headers that you want to pre-compile here
 #include "framework.h"
 

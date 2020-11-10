@@ -1,11 +1,5 @@
 ﻿// dllmain.cpp : Defines the entry point for the DLL application.
 
-#define WIN32_LEAN_AND_MEAN
-#ifdef __cplusplus__
-#include <cstdlib>
-#else
-#include <stdlib.h>
-#endif
 #include "pch.h"
 #include "MSCorEE.h"
 #include <iostream>
@@ -67,11 +61,17 @@ MODULEINFO GetModuleInfo(char* szModule);
 
 DWORD WINAPI main_thread(LPVOID lpParameter)
 {
+	err = fopen_s(&file, "genslich.log", "a+");
 	if (!AllocConsole())
 	{
+		if (!err && file != NULL) {
+			fprintf_s(file, "Failed to allocConsole\n");
+			fflush(file);
+			fclose(file);
+		}
 		return 1;
 	}
-	err = fopen_s(&file, "genslich.log", "a+");
+
 	freopen_s(reinterpret_cast<FILE**>(stdin), "CONIN$", "r", stdin);
 	freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
 
@@ -79,9 +79,10 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 
 	printf("Please press Numpad1 as soon as you can move around!!!!!");
 
-	if (!err && file != NULL)
+	if (!err && file != NULL) {
 		fprintf_s(file, "Registering Hotkeys....\n");
-	fflush(file);
+		fflush(file);
+	}
 
 	RegisterHotKey(NULL, HOTKEY_N1, MOD_NOREPEAT, VK_NUMPAD1);
 	RegisterHotKey(NULL, HOTKEY_F2, MOD_NOREPEAT, VK_F2);
@@ -103,6 +104,10 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 			{
 			case HOTKEY_N1: {
 				if (init) break;
+				if (!err && file != NULL) {
+					fprintf_s(file, "[GENSLICH] begin init\n");
+					fflush(file);
+				}
 				system("CLS");
 				HMODULE unityPlayerModule = LoadLibrary("UnityPlayer.dll");
 				HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
@@ -110,10 +115,19 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 				unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
 				unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
 				userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
-
-				std::thread tMenu(PrintMenu);
-				tMenu.join();
+				if (!err && file != NULL) {
+					fprintf_s(file, "[GENSLICH] got modul address\n");
+					fprintf_s(file, "[GENSLICH] unityPlayerBaseAddress: 0x%ux\n", unityPlayerBaseAddress);
+					fprintf_s(file, "[GENSLICH] unityPlayerOffsetAddress: 0x%ux\n", unityPlayerOffsetAddress);
+					fprintf_s(file, "[GENSLICH] userAssemblyBaseAddress: 0x%ux\n", userAssemblyBaseAddress);
+				}
+				fflush(file);
+				//std::thread tMenu(PrintMenu);
+				//tMenu.join();
 				init = true;
+				if (!err && file != NULL)
+					fprintf_s(file, "init done\n");
+				fflush(file);
 				break;
 			}
 			case HOTKEY_F2:
@@ -149,6 +163,10 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 				//InstantBowCharge();
 				break;
 			case HOTKEY_F9:
+				if (!err && file != NULL) {
+					fprintf_s(file, "exiting...\n");
+					fflush(file);
+				}
 				exitProgram = true;
 				Sleep(300);
 				FreeConsole();
@@ -161,6 +179,8 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 		}
 	}
 	FreeConsole();
+	if (!err && file != NULL)
+		fclose(file);
 	return 0;
 }
 
@@ -234,6 +254,10 @@ void ESPHack() {
 	char line[40] = "";
 	snprintf(line, sizeof line, "[+] ESP (Monster & Chest): %s\n", (ESP ? "enabled" : "disabled"));
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 	//char line[50];
 	//strcpy_s(line, "ESP (Monster & Chest): ");
 	//strcat_s(line, (ESP ? "activated" : "disabled"));
@@ -245,18 +269,34 @@ void ESPHack() {
 void MonsterLevel() {
 	WriteMemory(userAssemblyBaseAddress + 0x125AD3E, ESP ? 0x84 : 0x87, 1); //0x8
 	printf("MonsterLevel Address: 0x%ux\n", userAssemblyBaseAddress + 0x125AD3E);
+	if (!err && file != NULL) {
+		fprintf_s(file, "MonsterLevel Address: 0x%ux\n", userAssemblyBaseAddress + 0x125AD3E);
+		fflush(file);
+	}
 }
 void MonsterHP() {
 	WriteMemory(userAssemblyBaseAddress + 0x12597BB, ESP ? 0x74 : 0x76, 1); //0x76
 	printf("MonsterHP Address: 0x%ux\n", userAssemblyBaseAddress + 0x12597BB);
+	if (!err && file != NULL) {
+		fprintf_s(file, "MonsterHP Address: 0x%ux\n", userAssemblyBaseAddress + 0x12597BB);
+		fflush(file);
+	}
 }
 void ChestESP() {
 	WriteMemory(userAssemblyBaseAddress + 0x1C6F317, ESP ? 0x75 : 0x74, 1); //0x74
 	printf("ChestESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F317);
+	if (!err && file != NULL) {
+		fprintf_s(file, "ChestESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F317);
+		fflush(file);
+	}
 }
 void ChestESPDist() {
 	WriteMemory(userAssemblyBaseAddress + 0x1C6F39A, ESP ? 0x75 : 0x74, 1); //0x74
 	printf("ChestDistESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F39A);
+	if (!err && file != NULL) {
+		fprintf_s(file, "ChestDistESP Address: 0x%ux\n", userAssemblyBaseAddress + 0x1C6F39A);
+		fflush(file);
+	}
 }
 void InstantBowCharge() {
 	IBC = !IBC;
@@ -271,6 +311,10 @@ void InstantBowCharge() {
 	char line[35] = "";
 	snprintf(line, sizeof line, "[+] InstantBowCharge: %s\n", (IBC ? "enabled" : "disabled"));
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 	//char line[50];
 	//strcpy_s(line, "InstantBowCharge: ");
 	//strcat_s(line, (IBC ? "activated" : "disabled"));
@@ -292,6 +336,10 @@ void NoClip() {
 	char line[35] = "";
 	snprintf(line, sizeof line, "[+] NoClip: %s\n", (NoC ? "enabled" : "disabled"));
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 }
 void E_Skill_NoCooldown() {
 	if (userAssemblyBaseAddress == 0) return;
@@ -303,6 +351,10 @@ void E_Skill_NoCooldown() {
 	char line[60] = "";
 	snprintf(line, sizeof line, "[+] E-Skill No Cooldown: %s\n", (NoC ? "enabled" : "disabled"));
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 }
 void SaveCurrentCoords() {
 	if (unityPlayerOffsetAddress == 0) return;
@@ -312,6 +364,10 @@ void SaveCurrentCoords() {
 	char line[UCHAR_MAX] = "";
 	snprintf(line, sizeof line, "[+] [SAVED]\n X: %f\n Y: %f\n Z: %f\n", X, Y, Z);
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 	SavedCoords[0] = X;
 	SavedCoords[1] = Z;
 	SavedCoords[2] = Y;
@@ -347,6 +403,10 @@ void TELE() {
 	char line[UCHAR_MAX] = "";
 	snprintf(line, sizeof line, "[+] Teleport to: %f | %f | %f\n", SavedCoords[0], SavedCoords[2], SavedCoords[1]);
 	printf(line);
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 	//char line[120];
 	//char Coord[sizeof SavedCoords[0]];
 	//strcpy_s(line, "Teleporting to: ");
@@ -373,7 +433,10 @@ void ToggleFPS() {
 	char line[UCHAR_MAX] = "";
 	snprintf(line, sizeof line, "[+] FPS toggled: %i\n", *(int*)(unityPlayerBaseAddress + 0x18269C4));
 	printf(line);
-
+	if (!err && file != NULL) {
+		fprintf_s(file, line);
+		fflush(file);
+	}
 	//char line[50];
 	//strcpy_s(line, sizeof line, "FPS toggled: ");
 	//strcat_s(line, sizeof line, (char*)*(int*)(unityPlayerBaseAddress + 0x18269C4));

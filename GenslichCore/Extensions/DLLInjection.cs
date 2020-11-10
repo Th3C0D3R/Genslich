@@ -40,7 +40,7 @@ namespace GenslichCore.Extensions
         const uint MEM_RESERVE = 0x00002000;
         const uint PAGE_READWRITE = 4;
 
-        public static bool Inject(Process ProcessName, string DLLPath)
+        public static IntPtr Inject(Process ProcessName, string DLLPath)
         {
             // the target process - I'm using a dummy process for this
             // if you don't have one, open Task Manager and choose wisely
@@ -56,12 +56,11 @@ namespace GenslichCore.Extensions
             // and storing its address in a pointer
             IntPtr allocMemAddress = VirtualAllocEx(procHandle, IntPtr.Zero, (uint)((DLLPath.Length + 1) * Marshal.SizeOf(typeof(char))), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 
-            // writing the name of the dll there
-            UIntPtr bytesWritten;
-            WriteProcessMemory(procHandle, allocMemAddress, Encoding.Default.GetBytes(DLLPath), (uint)((DLLPath.Length + 1) * Marshal.SizeOf(typeof(char))), out bytesWritten);
+         // writing the name of the dll there
+         WriteProcessMemory(procHandle, allocMemAddress, Encoding.Default.GetBytes(DLLPath), (uint)((DLLPath.Length + 1) * Marshal.SizeOf(typeof(char))), out _);
 
-            // creating a thread that will call LoadLibraryA with allocMemAddress as argument
-            return (CreateRemoteThread(procHandle, IntPtr.Zero, 0, loadLibraryAddr, allocMemAddress, (uint)ProcessCreationFlags.CREATE_SUSPENDED, IntPtr.Zero) != null);
+         // creating a thread that will call LoadLibraryA with allocMemAddress as argument
+         return CreateRemoteThread(procHandle, IntPtr.Zero, 0, loadLibraryAddr, allocMemAddress, (uint)ProcessCreationFlags.ZERO_FLAG, IntPtr.Zero);
         }
     }
 }

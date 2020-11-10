@@ -14,12 +14,10 @@ namespace Genslich
 {
     public partial class frmMain : Form
     {
-        private string PathToPS1Script = "";
         private string PathToExe = "";
         public frmMain()
         {
             InitializeComponent();
-            PathToPS1Script = SavePS1ScriptTmp();
             Settings.Default.Reload();
             if (!string.IsNullOrWhiteSpace(Settings.Default.GenshinFilePath))
             {
@@ -30,27 +28,7 @@ namespace Genslich
             }
         }
 
-        private string SavePS1ScriptTmp()
-        {
-            // Determine path
-            var assembly = Assembly.GetExecutingAssembly();
-            string resourcePath = "startGenshin.ps1";
-            // Format: "{Namespace}.{Folder}.{filename}.{Extension}"
-            if (!resourcePath.StartsWith(nameof(Genslich)))
-            {
-                resourcePath = assembly.GetManifestResourceNames()
-                    .Single(str => str.EndsWith(resourcePath));
-            }
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourcePath))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                File.WriteAllText(Path.Combine(Path.GetTempPath(), "genslich.ps1"), reader.ReadToEnd());
-                return Path.Combine(Path.GetTempPath(), "genslich.ps1");
-            }
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
+        private void BtnStart_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(PathToExe))
             {
@@ -61,8 +39,9 @@ namespace Genslich
                     {
                         try
                         {
-                            if (DLLInjection.Inject(Genshin, "Resources\\HelloWorldDLL.dll"))
-                                ProcessExtensions.Resume(Genshin);
+                     IntPtr threadAddress = DLLInjection.Inject(Genshin, "Resources\\HelloWorldDLL.dll");
+                            if (threadAddress != null)
+                                ProcessExtensions.Resume(Genshin,threadAddress);
                             else throw new ApplicationException($"Code: {Marshal.GetLastWin32Error()}");
                         }
                         catch (ApplicationException ex)
@@ -78,7 +57,7 @@ namespace Genslich
             }
         }
 
-        private void ofdGenshinexe_FileOk(object sender, CancelEventArgs e)
+        private void OfdGenshinexe_FileOk(object sender, CancelEventArgs e)
         {
             PathToExe = ofdGenshinexe.FileName;
             txtPathToExe.Text = PathToExe;
@@ -88,14 +67,14 @@ namespace Genslich
             Settings.Default.Save();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             ofdGenshinexe.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("If you need help, just ask someone on Discord!\n\nIf you are not on the Discord Server already, just send TH3C0D3R#4338 a PM with your orderID", "NEEd HELP???");
+            MessageBox.Show("If you need help, just ask someone on Discord!\n\nIf you are not on the Discord Server already, just send TH3C0D3R#4338 a PM with your orderID", "NEED HELP???");
         }
     }
 }

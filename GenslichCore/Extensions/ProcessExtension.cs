@@ -31,9 +31,9 @@ namespace Genslich.Extensions
 
         #region Public Methods
 
-        public static void Resume(this Process process)
+        public static void Resume(this Process process, IntPtr hackThread)
         {
-            void resume(ProcessThread pt)
+         static void resume(ProcessThread pt)
             {
                 IntPtr threadHandle = NativeMethods.OpenThread(
                     ThreadAccess.SUSPEND_RESUME, false, (uint)pt.Id);
@@ -54,11 +54,13 @@ namespace Genslich.Extensions
                     pt => resume(pt));
             }
             else resume(threads[0]);
-        }
+         //try { NativeMethods.ResumeThread(hackThread); }
+         //finally { NativeMethods.CloseHandle(hackThread); }
+      }
 
         public static void Suspend(this Process process)
         {
-            void suspend(ProcessThread pt)
+         static void suspend(ProcessThread pt)
             {
                 IntPtr threadHandle = NativeMethods.OpenThread(
                     ThreadAccess.SUSPEND_RESUME, false, (uint)pt.Id);
