@@ -85,8 +85,4 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy $(OutDir) &quot;Z:\SanDisk-Ultra-01\Genslich\&quot; /E /Y /Q" />
-  </Target>
-
 </Project>

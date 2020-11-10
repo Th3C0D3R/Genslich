@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Genslich
@@ -32,17 +33,22 @@ namespace Genslich
         {
             if (!string.IsNullOrEmpty(PathToExe))
             {
-                if (ProcessStart.StartProcess(PathToExe, ProcessCreationFlags.CREATE_SUSPENDED))
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                if (ProcessStart.StartProcess(PathToExe, ProcessCreationFlags.ZERO_FLAG))
                 {
                     Process Genshin = Process.GetProcesses().ToList().Find((p) => p.ProcessName == "GenshinImpact");
                     if (Genshin != null)
                     {
                         try
                         {
-                     IntPtr threadAddress = DLLInjection.Inject(Genshin, "Resources\\HelloWorldDLL.dll");
-                            if (threadAddress != null)
-                                ProcessExtensions.Resume(Genshin,threadAddress);
-                            else throw new ApplicationException($"Code: {Marshal.GetLastWin32Error()}");
+                            Thread.Sleep(1000);
+                            IntPtr threadAddress = DLLInjection.Inject(Genshin, "Resources\\HelloWorldDLL.dll");
+                            sw.Stop();
+                            lblTime.Text = $"{sw.Elapsed.Seconds}:{sw.Elapsed.Milliseconds}";
+                            //if (threadAddress != null)
+                            //    ProcessExtensions.Resume(Genshin, threadAddress);
+                            //else throw new ApplicationException($"Code: {Marshal.GetLastWin32Error()}");
                         }
                         catch (ApplicationException ex)
                         {

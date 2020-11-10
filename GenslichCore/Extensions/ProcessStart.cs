@@ -15,12 +15,6 @@ namespace GenslichCore.Extensions
                IntPtr lpEnvironment, string lpCurrentDirectory,
                ref STARTUPINFO lpStartupInfo,
                out PROCESS_INFORMATION lpProcessInformation);
-
-        [DllImport("kernel32.dll")]
-        public static extern uint ResumeThread(IntPtr hThread);
-
-        [DllImport("kernel32.dll")]
-        public static extern uint SuspendThread(IntPtr hThread);
     }
     public static class ProcessStart
     {
@@ -30,7 +24,7 @@ namespace GenslichCore.Extensions
             PROCESS_INFORMATION pi = new PROCESS_INFORMATION();
             bool success = NativeMethods.CreateProcess(path, null,
                 IntPtr.Zero, IntPtr.Zero, false,
-                ProcessCreationFlags.CREATE_SUSPENDED,
+                creationFlags,
                 IntPtr.Zero, null, ref si, out pi);
             return success;
         }
