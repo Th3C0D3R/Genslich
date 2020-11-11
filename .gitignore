@@ -46,3 +46,4 @@ Lunar/.github/**
 Lunar/Lunar/bin/**
 Lunar/Lunar/obj/**
 Release/**
+/Lunar/*
