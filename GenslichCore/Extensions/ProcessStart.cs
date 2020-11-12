@@ -18,7 +18,7 @@ namespace GenslichCore.Extensions
     }
     public static class ProcessStart
     {
-        public static bool StartProcess(string path, ProcessCreationFlags creationFlags)
+        public static (bool, PROCESS_INFORMATION) StartProcess(string path, ProcessCreationFlags creationFlags)
         {
             STARTUPINFO si = new STARTUPINFO();
             PROCESS_INFORMATION pi = new PROCESS_INFORMATION();
@@ -26,7 +26,7 @@ namespace GenslichCore.Extensions
                 IntPtr.Zero, IntPtr.Zero, false,
                 creationFlags,
                 IntPtr.Zero, null, ref si, out pi);
-            return success;
+            return (success,pi);
         }
     }
 }
