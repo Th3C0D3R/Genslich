@@ -113,7 +113,7 @@ DWORD WINAPI main_thread(LPVOID lpParameter)
 				HMODULE userAssemblyModule = LoadLibrary("UserAssembly.dll");
 
 				unityPlayerBaseAddress = (UINT_PTR)unityPlayerModule;
-				unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x1934C10));
+				unityPlayerOffsetAddress = (*(UINT_PTR*)(unityPlayerBaseAddress + 0x19841E0));
 				userAssemblyBaseAddress = (UINT_PTR)userAssemblyModule;
 				if (!err && file != NULL) {
 					fprintf_s(file, "[GENSLICH] got modul address\n");
